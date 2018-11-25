@@ -267,6 +267,13 @@ a:hover {
     padding: 10px 10px 0px 0px;
 }
 
+.capt {
+    text-align:center;
+    font-size:12px;
+    font-style:italic;
+    padding-bottom:10px;
+}
+
 /* iframe auto-resize */
 /* delete if dont use */
 
@@ -300,8 +307,27 @@ a:hover {
 
 <div id="pr1" class="modal">   
     <div class="modal-content">
-    <span class="close">×</span>
-        eggy is egg 
+        <span class="close">×</span>
+        <p class="head">name</p>
+        <div class="split">
+        <div class="wide"><i>Name</i>, my capstone project for the minor in Applied Music Technology, is an electronic instrument driven by gestures. It uses two ultrasonic distance sensors and an Adafruit APDS9960 breakout board. The breakout board is capable of tracking gestures, color, and distance. Currently, only the gesture tracking is in use, detecting left, right, up, and downward motions. When these are reported to the software, sound is triggered. The different motions control the timbre of sound, changing the constants input to my syntehsizer. The ultrasonic distance sensors, positioned on opposite sides of the instrument, are used to measure how far away the performer's hand is. This distance is then transformed into pitches. The program stores the most recent pitch, and outputs it through the desired synthesis when a gesture is detected. <br> 
+	<img src="images/proj/ca1.jpg" style="margin-top:10px"><div class="capt">building the casing</div>
+	&emsp; One of the extended goals of this project is to implement multiple synthesizers and create an "all purpose string instrument." This would use different gestures to switch between bowed string synthesis and plucked string synthesis, and potentially use the distance tracking capabilities of the APDS to trigger hammered string timbres.            
+	</div>
+        <div class="thin">
+             <img src="images/proj/ca2.jpg"><div class="capt">Arduino and sensors</div><br>
+        </div>
+        </div>
+        
+        <div class="split">
+        <div class="thin">
+        &emsp; To assemble the hardware, I learned how to solder and desolder. The ultrasonic sensors had to have the pins removed and swapped with new ones so they would point upward. I wired the components to a shield so the components can be easily removed from the Arduino. In designing the casing, I considered multiple options, including making the entire thing out of wood. Aesthetically, I wanted the instrument to appear like a dulcimer, so I decided to make the casing out of a decorative box. I printed my design so i could cut it cleanly, and I'm quite pleased with the result. It is supported with wooden blocks and pegs, two of which keep the electronics, which are attached to a sheet of craft board, in line with the lid.
+	<img src="https://placekitten.com/700/500" style="margin-top:10px"><div class="capt">dissassembled instrument</div><br>        
+	</div>
+        <div class="wide">
+            <img src="https://placekitten.com/700/500"><div class="capt">in performance</div><br>
+        </div>
+        </div>
     </div>
 </div>
 
