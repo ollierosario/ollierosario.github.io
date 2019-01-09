@@ -180,6 +180,17 @@ a:hover {
     border-radius:20px;
 }
 
+video {
+	position:relative;
+	max-width:100%;
+	height:auto;
+}
+
+audio {
+	position:relative;
+	width:100%;
+	height:auto;
+}
 
 /* iframe auto-resize */
 
@@ -219,7 +230,8 @@ a:hover {
 <table id="column1">
 <tr>
    <td style="background-color:#888; box-shadow:-7px -7px #aaa;">
-        put capstone here
+        <p><div class="head2"><i>untitled</i> for <i><a href="/proj">zither sin string</a></i></p>
+	<video width="100%" height="100%" poster="images/proj/ca4.PNG" controls> <source src="images/music/capstone.mp4" type="video/mp4"></video>
     </td>
     <td style="background-color:#999;box-shadow:-7px -7px #bbb;">
         <p><div class="head2">At the edge of the water...</div></p>
@@ -242,10 +254,16 @@ a:hover {
 	<p style="font-size:12px"><i>The Bells</i> is a piece inspired by Edgar Allan Poe's poem of the same name. Our interpretation of the change in tone through the poem gave our piece a narrative of instability. The character moves through zones that are increasingly chaotic and dangerous, becoming more scared and confused, before finally being caught in the center. The sound samples used in each zone are meant to reflect this, and the themes of loss and madness. </p>
   </td>
   <td style="background-color:#ccc;box-shadow:-7px -7px #eee;">
-      <p><div class="head2">MaxMSP Patch: Sound Building Synthesizer</div></p>
-    <video width="100%" height="100%" id="embed-5b078fd62e999846615641_html5_api" class="vjs-tech" poster="images/music/synth.jpg" controls> <source src="images/music/SynthDemo.mp4" type="video/mp4"></video>
+      <p><div class="head2">MaxMSP Patches</div></p>
+	<p><div class="head2" style="font-size:26px">Sound Building Synthesizer</div></p>
+    <video width="100%" height="100%" poster="images/music/synth.jpg" controls> <source src="images/music/SynthDemo.mp4" type="video/mp4"></video>
      <p>This video provides a demo of my synthesizer patch. It can be downloaded <a href="https://www.dropbox.com/s/2cpx36tmmu3crwj/synthy.zip?dl=0">here</a>.</p>
      <p style="font-size:12px">MIDI input is supplied by use of either an external MIDI controller or the on screen keyboard. The FM synthesis modulation index can be edited, and users can save any graphs they like. There is an integer box to control the AM synthesis frequency. The additive synthesis module has 18 preset sound styles, sorted into two types.</p>
+	<p><div class="head2" style="font-size:26px">Digital Loop Pedal</div></p>
+	<img src="images/music/loop.PNG" style="max-width:100%">
+	<p>Download available <a href="https://www.dropbox.com/s/uprtt34civov837/soundRecorder.zip?dl=0">here</a>. Sample audio created with this patch:</p>
+	<audio controls><source src="images/music/sample.mp3" type="audio/mpeg"></audio>
+	<p style="font-size:12px">This patch allows users to loop up to four audio samples of any length. Samples can be recorded in real time or opened from a file, and the interface allows for randomized pitch shifting.</p>
   </td>
 </tr>
 </table>
