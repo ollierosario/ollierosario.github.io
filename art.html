@@ -401,6 +401,15 @@ a:hover {
     padding-left: 5%;
 }
 
+.caption {
+    text-align:center;
+    font-size:16px;
+    font-style:italic;
+    padding-bottom:10px;
+	font-family: 'Reenie Beanie', cursive;
+}
+
+
 #item2 {
     max-height:70vh;
     max-width:90%;
@@ -443,37 +452,41 @@ a:hover {
 
 <div class="imgcontainercont2">
 
-    <div class="imgcontainer2" style="border-radius:15px 0 0 0;background-color:#aaa; box-shadow: -7px -7px #ccc; z-index:2">
+    <div class="imgcontainer2" style="border-radius:15px 0 0 0;background-color:#aaa; box-shadow: -7px -7px #ccc; z-index:4">
     <img src="images/art/bat2.jpg" class="modalitems" style="width:90%; padding:5% 0;" id="m1">
     </div>
 
-    <div class="imgcontainer2" style="border-radius:0 15px 0 0;background-color:#aaa; box-shadow: -8px -7px #ccc; z-index:1">
+    <div class="imgcontainer2" style="border-radius:0 15px 0 0;background-color:#aaa; box-shadow: -8px -7px #ccc; z-index:3">
     <img src="images/art/coqui.jpg" class="modalitems" style="width:90%; padding:5% 0;" id="m2">
     </div>
 </div>
 
-<div class="imgcontainercont" style="background:#aaa; z-index:2">reflections</div>
+<div class="imgcontainercont" style="background:#aaa; box-shadow: -7px -7px #ccc; z-index:2">reflections</div>
 
 <!-- modal -->
-<div class="imgcontainer" style="border-radius: 0 0 15px 15px;background-color:#aaa;box-shadow: -7px -50px #ccc;">
+<div class="imgcontainer" style="border-radius: 0 0 15px 15px;background-color:#aaa;box-shadow: -7px -8px #ccc;">
     <div id="themodal" class="modal">   
         <span class="close">x</span>
         <img class="modal-content" id="img01">
     </div>
 </div>
 
-<div class="imgcontainer" style="border-radius: 0 0 15px 15px;background-color:#aaa;box-shadow: -7px -50px #ccc;" id="notmodal">
+<div class="imgcontainer" style="border-radius: 0 0 15px 15px;background-color:#aaa;box-shadow: -7px -8px #ccc;" id="notmodal">
 
 
     <img src="images/art/r2.JPG" class="items" style="width:90%; padding:5% 0;" id="item1">
     <div id="invisible1">
-    <div class="aside">
+    <div class="aside" style="overflow-y:hidden;">
         <img src="images/art/r1.JPG" class="modalitems" width="100%" style="border-radius:10px;" id="m3">
+	<div class="caption"><i>Reflections</i></div>
+	<br>
+	  <img src="images/art/lizard.JPG" class="modalitems" width="100%" style="border-radius:10px;" id="m5">
     </div>
     <div class="bside">
-        <p>Enim neque volutpat ac tincidunt vitae semper quis lectus. Quis auctor elit sed vulputate mi sit. Lorem mollis aliquam ut porttitor leo a diam sollicitudin. Accumsan tortor posuere ac ut consequat semper viverra. Etiam sit amet nisl purus in mollis nunc. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Eu tincidunt tortor aliquam nulla. Et netus et malesuada fames ac. Orci ac auctor augue mauris augue. Tristique senectus et netus et malesuada fames ac. Ipsum dolor sit amet consectetur adipiscing elit duis tristique sollicitudin. Dui accumsan sit amet nulla facilisi morbi.</p>
-        <p>Enim neque volutpat ac tincidunt vitae semper quis lectus. Quis auctor elit sed vulputate mi sit. Lorem mollis aliquam ut porttitor leo a diam sollicitudin. Accumsan tortor posuere ac ut consequat semper viverra. Etiam sit amet nisl purus in mollis nunc. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Eu tincidunt tortor aliquam nulla. Et netus et malesuada fames ac. Orci ac auctor augue mauris augue. Tristique senectus et netus et malesuada fames ac. Ipsum dolor sit amet consectetur adipiscing elit duis tristique sollicitudin. Dui accumsan sit amet nulla facilisi morbi.</p>
-        <p>Enim neque volutpat ac tincidunt vitae semper quis lectus. Quis auctor elit sed vulputate mi sit. Lorem mollis aliquam ut porttitor leo a diam sollicitudin. Accumsan tortor posuere ac ut consequat semper viverra. Etiam sit amet nisl purus in mollis nunc. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Eu tincidunt tortor aliquam nulla. Et netus et malesuada fames ac. Orci ac auctor augue mauris augue. Tristique senectus et netus et malesuada fames ac. Ipsum dolor sit amet consectetur adipiscing elit duis tristique sollicitudin. Dui accumsan sit amet nulla facilisi morbi.</p>
+        <p>Reflections, made in the aftermath of hurricane Irma, challenges the viewer to understand the role of colonialism in the environmental disasters plaguing Puerto Rico. The mirrors incorporate the viewer into the work, placing them in the position of an onlooker. The flora and fauna are endemic to the island, and chosen to display the natural diversity. The handmade figures are to scale, the same size as real specimens.</p>
+	<img src="images/art/flor.JPG" class="modalitems" style="width:90%; margin:5%; border-radius:10px; overflow-y="scroll;" id="m4">
+        <p>In planning this sculpture, I researched species endemic to Puerto Rico.<i>Shown above is Thespesia grandiflora</i>, known as la flor de maga. It is the national flower of Puerto Rico. While we are not a sovereign people, there is a strong national identity that is often rooted in the natural features of the island. This flower is enormous, typically measuring 13 cm, and, like all the other wire figures in <i>Reflections</i>, has been depicted to scale.</p>
+	<p style="padding-bottom:5%">Also close to the identity of the island is the coquí. The word coquí refers to mating call of the males, and encompasses multiple species. Less iconic are bats, the only land mammals native to Puerto Rico. The wing featured is that of a big brown bat, <i>Eptesicus fuscus</i>. Bats are essential to limit the population of mosquitoes on the island. </p>
     </div>
     </div>
     <button onclick="on1()" class="buttons" id="button3">
