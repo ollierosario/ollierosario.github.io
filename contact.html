@@ -126,13 +126,6 @@
     -o-transform: scaleX(-1);
   }
 
-  .header {
-    padding: 10px;
-    text-align: center;
-    font-size: 64px;
-    font-family: 'Reenie Beanie', cursive;
-  }
-
   .head2 {
     text-align: center;
     font-family: 'Reenie Beanie', cursive;
@@ -153,18 +146,74 @@
     border-radius: 25px;
   }
 
-  #abtcontainer {
-    width: 70%;
+  #formcontainer {
+    width: 50%;
     height: 85%;
     margin-top: 8%;
-    margin-left: 15%;
+    margin-left: 25%;
     overflow-y: auto;
   }
 
-  #abt {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
+  .split:after {
+    content: "";
+    display: table;
+    clear: both;
   }
+
+  .even {
+    float: left;
+    width: 50%;
+    padding: 10px 10px 0px 0px;
+  }
+
+  input[type=text],
+  input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #34385e;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+  }
+
+  label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+  }
+
+  textarea {
+    width: 100%;
+    max-width: 100%;
+    height: 30vh;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #34385e;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0);
+    resize: none;
+    overflow-y: auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color: #34385e;
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 24px;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
 
   #icono {
     position: fixed;
@@ -193,14 +242,34 @@
   <img src="images/f2.png" class="florals" id="f2">
 
   <div id="bigcontainer">
-    <div id="abtcontainer">
-      <div id="abt">
-        <img src="images/me.JPG" style="width:45%; float:left; margin-right:5%; border-radius:10px;">
-        <p>I'm Ollie Rosario! I am a fourth year student at the University of British Columbia, graduating in May. I'm interested in multimedia arts, particularly sonic art, and their role in the social landscape in a rapidly evolving world.</p>
-        <p>Originally from Philadelphia, I moved to Vancouver in 2015 to study at UBC. While there, I gained music programming skills and composed pieces with my peers in the Laptop Orchesta. When not composing, I like to sketch and practice guitar.
-        </p>
-        <p>It is my hope that as I continue my studies, I can develop my skills and creative practice further.</p>
-      </div>
+    <div id="formcontainer">
+      <div class="head2" style="margin-bottom:50px;">inquiries</div>
+      <form action="https://www.enformed.io/ebe577bc" method="POST">
+        <div class="split">
+          <div class="even">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="user_name" placeholder="Your name..">
+          </div>
+
+          <div class="even">
+            <label for="mail">Email</label>
+            <input type="email" id="mail" name="user_email" placeholder="Your email..">
+          </div>
+        </div>
+
+        <div>
+          <label for="msg">Message</label>
+          <textarea id="msg" name="user_message"></textarea>
+        </div>
+
+        <div class="button">
+          <input type="submit" value="submit">
+        </div>
+
+
+        <input type="hidden" name="*redirect" value="https://ollierosario.github.io/thanks" />
+
+      </form>
 
     </div>
   </div>
