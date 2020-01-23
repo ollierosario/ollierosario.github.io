@@ -143,7 +143,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 15px;
+      border-radius: 0px;
     }
 
     .filterdiv {
@@ -214,6 +214,14 @@
     }
 
     #pr9 {
+      display: none;
+    }
+
+    #pr10 {
+      display: none;
+    }
+
+    #pr11 {
       display: none;
     }
 
@@ -311,22 +319,24 @@
     }
 
     /* style the buttons */
-
-    #buttonholder {
+    .thin2 {
+      width: 20%;
+      height: 80vh;
+      overflow-x: hidden;
+      right: 9%;
+      top: 15vh;
+      text-align: right;
       position: fixed;
-      top: 10vh;
-      height: 81vh;
     }
 
     .btn {
-      position: absolute;
-      border: none;
-      outline: none;
+      position: relative;
       background-color: rgba(255, 255, 255, 0);
       cursor: pointer;
       font-size: 20px;
       font-family: 'Montserrat', sans-serif;
       color: #858585;
+
     }
 
     .btn:hover {
@@ -440,6 +450,17 @@
   <div id="pr5" class="modal">
     <div class="modal-content">
       <span class="close">x</span>
+      <div class="head">Fire and Ice</div>
+      <div class="fluidMedia"><iframe width="100%" src="https://www.youtube.com/embed/-hutGz2QRWI?modestbranding=1;rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+      <p>Programmers: Ollie Rosario, Chantelle Ko, Elizabeth Feng<br> Violin: Chantelle Ko </p>
+      <p style="font-size:12px"><i>Fire and Ice</i> discusses the relationships between extremes. The two contrasting elements are explored through a range of their manifestations: volcanic eruptions, ice floes shifting, houses burning, and more all
+        can be heard in the piece. We progress through their various similar and dissimilar sounds and forces, keeping their potential for destruction in mind.</p>
+    </div>
+  </div>
+
+  <div id="pr6" class="modal">
+    <div class="modal-content">
+      <span class="close">x</span>
       <p class="head">cesium-137</p>
       <div class="split">
         <div class="wide">
@@ -458,7 +479,7 @@
     </div>
   </div>
 
-  <div id="pr6" class="modal">
+  <div id="pr7" class="modal">
     <div class="modal-content">
       <span class="close">x</span>
       <p class="head">storytelling</p>
@@ -481,7 +502,7 @@
     </div>
   </div>
 
-  <div id="pr7" class="modal">
+  <div id="pr8" class="modal">
     <div class="modal-content">
       <span class="close">x</span>
       <div class="head" style="font-size:26px">Digital Loop Pedal</div>
@@ -493,7 +514,7 @@
     </div>
   </div>
 
-  <div id="pr8" class="modal">
+  <div id="pr9" class="modal">
     <div class="modal-content">
       <span class="close">x</span>
       <p class="head">At the edge of the water...</p>
@@ -505,7 +526,7 @@
     </div>
   </div>
 
-  <div id="pr9" class="modal">
+  <div id="pr10" class="modal">
     <div class="modal-content">
       <span class="close">x</span>
       <p class="head">zither sin string</p>
@@ -544,6 +565,17 @@
     </div>
   </div>
 
+  <div id="pr11" class="modal">
+    <div class="modal-content">
+      <span class="close">x</span>
+      <p class="head">on settings</p>
+      <div class="fluidMedia"><iframe width="100%" src="https://www.youtube.com/embed/YbMeZSbaemQ?modestbranding=1;rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+      <p style="font-size:12px">This interactive installation uses motion tracking to manipulate videos. A generative system splices and organizes the clips, while the position of viewers changes the visual processing. Programmed in Max/MSP for
+        Kinect using <a href="http://blogs.ubc.ca/taste/tag/kicass/">KiCASS</a>.</p>
+    </div>
+  </div>
+
+
   <!-- modal end -->
 
 
@@ -553,35 +585,49 @@
 
   <div id="bigcontainer">
     <div class="split">
-      <div class="wide" style="width:calc(100% - 230px); padding:0px;">
+      <div class="wide" style="width:80%; padding:0px;">
         <div class="grid-container">
+
+          <div class="filterdiv art sculpture">
+            <div id="p11">
+              <img src="images/art/settings.jpg" class="modalitems" onclick="openproj('pr11')">
+            </div>
+          </div>
+
+
           <div class="filterdiv music art sculpture" style="grid-row-start: 1; grid-row-end: 3; grid-column-start: 1; grid-column-end: 3;">
-            <div id="p9">
-              <img src="images/proj/ca.JPG" class="modalitems" onclick="openproj('pr9')">
+            <div id="p10">
+              <img src="images/proj/ca.JPG" class="modalitems" onclick="openproj('pr10')">
             </div>
           </div>
 
           <div class="filterdiv music performance">
-            <div id="p8">
-              <img src="images/music/water.PNG" class="modalitems" onclick="openproj('pr8')">
+            <div id="p9">
+              <img src="images/music/water.PNG" class="modalitems" onclick="openproj('pr9')">
             </div>
           </div>
 
           <div class="filterdiv music programs">
+            <div id="p8">
+              <img src="images/music/loop.PNG" class="modalitems" onclick="openproj('pr8')">
+            </div>
+          </div>
+
+          <div class="filterdiv art print">
             <div id="p7">
-              <img src="images/music/loop.PNG" class="modalitems" onclick="openproj('pr7')">
+              <img src="images/proj/st.png" class="modalitems" onclick="openproj('pr7')">
             </div>
           </div>
 
           <div class="filterdiv art print">
             <div id="p6">
-              <img src="images/proj/st.png" class="modalitems" onclick="openproj('pr6')">
+              <img src="images/art/cesium.jpg" class="modalitems" onclick="openproj('pr6')">
             </div>
           </div>
 
-          <div class="filterdiv art print">
+          <div class="filterdiv music performance">
             <div id="p5">
-              <img src="images/art/cesium.jpg" class="modalitems" onclick="openproj('pr5')">
+              <img src="images/music/fire.jpg" class="modalitems" onclick="openproj('pr5')">
             </div>
           </div>
 
@@ -612,16 +658,14 @@
         </div>
       </div>
 
-      <div class="thin" id="tagstime" style="width:230px; padding:0px;">
-        <div id="buttonholder">
-          <button class="btn active" style="left:50px" onclick="filterSelection('all')">all</button>
-          <button class="btn" style="top:16.7%; left:140px;" onclick="filterSelection('music')">music</button>
-          <button class="btn" style="top:33.4%; left:7px" onclick="filterSelection('art')">art</button>
-          <button class="btn" style="top:50.1%; left:76px;" onclick="filterSelection('programs')">programs</button>
-          <button class="btn" style="top:66.8%; left:94px; right:0;" onclick="filterSelection('performance')">performance</button>
-          <button class="btn" style="top:83.5%; left:59px;" onclick="filterSelection('print')">print</button>
-          <button class="btn" style="top:100%; left:120px;" onclick=" filterSelection('sculpture')">sculpture</button>
-        </div>
+      <div class="thin2" id="tagstime">
+        <span class="btn active" style="font-size:2.2vw" onclick="filterSelection('all')">all</span>
+        <br><span class="btn" style="top:5.3%; font-size:2.2vw" onclick="filterSelection('music')">music</span>
+        <br><span class="btn" style="top:11.13%; font-size:2.2vw;" onclick="filterSelection('art')">art</span>
+        <br><span class="btn" style="top:16.7%; font-size:2.2vw;" onclick="filterSelection('programs')">programs</span>
+        <br><span class="btn" style="top:22.3%; font-size:2.2vw" onclick="filterSelection('performance')">performance</span>
+        <br><span class="btn" style="top:27.8%; font-size:2.2vw;" onclick="filterSelection('print')">print</span>
+        <br><span class="btn" style="top:33.3%; font-size:2.2vw;" onclick=" filterSelection('sculpture')">sculpture</span>
       </div>
 
     </div>
