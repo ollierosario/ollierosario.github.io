@@ -23,35 +23,23 @@
     body {
       line-height: 125%;
       background: #ddf2e8 url("images/grid.jpg") 75% 0px/211px 375px repeat-y border-box fixed;
-      background: linear-gradient(to bottom, rgba(221, 242, 232, 0.8) 0%, rgba(190, 208, 255, 0.64) 100%),
+      background: linear-gradient(to bottom, rgba(190, 208, 255, 0.8) 0%, rgba(25, 50, 50, 0.64) 100%),
         url("images/grid.jpg") 75% 0px/211px 375px repeat-y border-box fixed;
       background-attachment: fixed;
       font-family: 'Montserrat',
         sans-serif;
     }
 
-    img.florals {
-      width: 211px;
-      height: auto;
-      position: absolute;
-      left: calc(75% - 158.25px);
-      top: 0px overflow: hidden;
-      mix-blend-mode: multiply;
-      pointer-events: none;
-    }
-
-
     /* scrollbar */
     ::-webkit-scrollbar {
       width: 3px;
       height: 5px;
-      background: #ddf2e8;
+      background: rgba(255, 255, 255, 0);
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #b8b8b8;
+      background: #557;
       border-radius: 16px;
-      border-top: 5px solid #ddf2e8;
     }
 
     /* permalinks */
@@ -97,7 +85,7 @@
     .nav {
       font-family: 'Montserrat', sans-serif;
       float: left;
-      text-align: center;
+      text-align: left;
       padding-left: 7.5%;
       padding-top: 12px;
     }
@@ -118,8 +106,7 @@
       width: 85%;
       height: 85vh;
       margin-left: 7.5%;
-      margin-top: 8vh;
-      padding: 15px;
+      margin-top: 11vh;
       position: fixed;
       overflow-y: scroll;
       border: 0px dotted #bed0ff;
@@ -136,6 +123,7 @@
       background-color: rgba(255, 255, 255, 0);
       text-align: center;
       font-size: 30px;
+      padding: 1.2vh;
     }
 
     /* project tiles */
@@ -143,7 +131,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 0px;
     }
 
     .filterdiv {
@@ -152,18 +139,6 @@
 
     .show {
       display: grid;
-    }
-
-    #icono {
-      position: fixed;
-      bottom: 7vh;
-      left: calc(7.5% - 133px);
-      margin-left: 0px;
-      margin-right: 0px;
-      text-align: left;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 2;
     }
 
 
@@ -226,7 +201,7 @@
     }
 
     .modal-content {
-      margin: auto;
+
       max-width: 85%;
       max-height: 96%;
       padding-left: 50px;
@@ -241,10 +216,8 @@
 
     .modal-content img {
       max-width: 100%;
-      border-radius: 10px;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 20px;
     }
 
     .close {
@@ -268,11 +241,17 @@
 
     .modalitems {
       opacity: 1;
+      filter: grayscale(75%);
+      -moz-transition: all 1s ease-in;
+      -o-transition: all 1s ease-in;
+      -webkit-transition: all 1s ease-in;
+      transition: all 1s ease-in;
       z-index: 1;
     }
 
     .modalitems:hover {
       cursor: pointer;
+      filter: grayscale(0%);
     }
 
     .split:after {
@@ -319,24 +298,14 @@
     }
 
     /* style the buttons */
-    .thin2 {
-      width: 20%;
-      height: 80vh;
-      overflow-x: hidden;
-      right: 9%;
-      top: 15vh;
-      text-align: right;
-      position: fixed;
-    }
 
     .btn {
       position: relative;
       background-color: rgba(255, 255, 255, 0);
       cursor: pointer;
-      font-size: 20px;
       font-family: 'Montserrat', sans-serif;
       color: #858585;
-
+      padding-right: 5px;
     }
 
     .btn:hover {
@@ -373,11 +342,6 @@
 </head>
 
 <body>
-
-  <div id="icono">
-    <img src="images/flor.png" style="width:75%; display:inline-block; margin-left:0px; margin-right:0px">
-  </div>
-  <img src="images/f2.png" class="florals" id="f2">
 
   <!-- modal start -->
 
@@ -428,20 +392,20 @@
     <div class="modal-content">
       <span class="close">x</span>
       <p class="head">reflections</p>
-      <img src="images/art/r2.JPG" width="35%" style="margin-top:15px; float:left;">
+      <img src="images/art/r2.JPG" width="35%" style="float:left;">
       <p>Reflections, made in the aftermath of hurricane Irma, challenges the viewer to understand the role of colonialism in the environmental disasters plaguing Puerto Rico. The mirrors incorporate the viewer into the work, placing them in the
         position of an onlooker. The flora and fauna are endemic to the island, and chosen to display the natural diversity. The handmade figures are to scale, the same size as real specimens.</p>
-      <img src="images/art/flor.jpg" width="40%" style="margin:15px; float:right;">
+      <img src="images/art/flor.jpg" width="40%" style="float:right;">
       <p>In planning this sculpture, I researched species endemic to Puerto Rico. One of the species depicted is <i>Thespesia grandiflora</i>, known as la flor de maga. It is the national flower of Puerto Rico. While we are not a sovereign people,
         there is a strong national identity that is often rooted in the natural features of the island. This flower is enormous, typically measuring 13 cm, and, like all the other wire figures in <i>Reflections</i>, has been depicted to scale.</p>
       <p>Also close to the identity of the island is the coquí. The word coquí refers to mating call of the males, and encompasses multiple species. Less iconic are bats, the only land mammals native to Puerto Rico. The wing featured is that of a big
         brown bat, <i>Eptesicus fuscus</i>. Bats are essential to limit the population of mosquitoes on the island.</p>
       <div class="split">
         <div class="even">
-          <img src="images/art/lizard.jpg" class="modalitems" width="90%" style="margin:5%">
+          <img src="images/art/lizard.jpg" width="90%">
         </div>
         <div class="even">
-          <img src="images/art/coqui.jpg" class="modalitems" width="90%" style="margin:5%">
+          <img src="images/art/coqui.jpg" width="90%">
         </div>
       </div>
     </div>
@@ -469,9 +433,9 @@
             Pripyat represents a near instantaneous corruption of meaning. The city was rendered a ghost town, and its message instantly became one of disaster rather than prosperity. In my print, this is reflected by the iconic ferris wheel from the
             never opened Pripyat Amusement Park.</p>
         </div>
-        <div class="thin"><img src="images/art/c3.JPG" style="border-radius:5px; margin-top:15px;"></div>
+        <div class="thin"><img src="images/art/c3.JPG" style="margin-top:15px;"></div>
       </div>
-      <img src="images/art/c2.jpg" width="40%" style="border-radius:5px; margin-bottom:25px; float:left;">
+      <img src="images/art/c2.jpg" width="40%" style="margin-bottom:25px; float:left;">
       <p>The ecological context of the print surrounds a lack of decay. Within the Chernobyl exclusionzone, litter mass loss is 40% lower than in the rest of Ukraine. This is thought to be a result of the disaster's impact on the populations of
         decomposers. Within the Red Forest, this is most notable. The trees that died from the radiation levels took on a red tint, depicted in the choice of ink in the print. I used noise to reflect the high levels of deceased organic matter on the
         floor, which carries a sense of disorder and stasis. There is a nature of slowed time in this space, where nothing grows and nothing decays. Cesium, the most prominent element in the exclusion zone, just reached its first half life in 2016,
@@ -580,92 +544,87 @@
 
 
   <div class="nav">
-    <img src="images/flor16.png"> <a href="/">home</a> <a href="/bio">bio</a> <a href="/resume">resume</a> <a href="/portfolio">portfolio</a> <a href="/contact">contact</a><img src="images/flor16.png" id="flipit">
+    <img src="images/flor16.png"> <a href="/">home</a> <a href="/bio">bio</a> <a href="/resume">resume</a> <a href="/portfolio">portfolio</a> <a href="/contact" style="padding-right:5px;">contact</a><img src="images/flor16.png" id="flipit">
+
+    <br><br>
+    <span class="btn active" style="padding-left:10px" onclick="filterSelection('all')">all</span>
+    <span class="btn" style="top:5.3%;" onclick="filterSelection('music')">music</span>
+    <span class="btn" style="top:11.13%;" onclick="filterSelection('art')">art</span>
+    <span class="btn" style="top:16.7%;" onclick="filterSelection('programs')">programs</span>
+    <span class="btn" style="top:22.3%;" onclick="filterSelection('performance')">performance</span>
+    <span class="btn" style="top:27.8%;" onclick="filterSelection('print')">print</span>
+    <span class="btn" style="top:33.3%;" onclick=" filterSelection('sculpture')">sculpture</span>
+  </div>
   </div>
 
   <div id="bigcontainer">
-    <div class="split">
-      <div class="wide" style="width:80%; padding:0px;">
-        <div class="grid-container">
+    <div class="grid-container">
 
-          <div class="filterdiv art sculpture">
-            <div id="p11">
-              <img src="images/art/settings.jpg" class="modalitems" onclick="openproj('pr11')">
-            </div>
-          </div>
-
-
-          <div class="filterdiv music art sculpture" style="grid-row-start: 1; grid-row-end: 3; grid-column-start: 1; grid-column-end: 3;">
-            <div id="p10">
-              <img src="images/proj/ca.JPG" class="modalitems" onclick="openproj('pr10')">
-            </div>
-          </div>
-
-          <div class="filterdiv music performance">
-            <div id="p9">
-              <img src="images/music/water.PNG" class="modalitems" onclick="openproj('pr9')">
-            </div>
-          </div>
-
-          <div class="filterdiv music programs">
-            <div id="p8">
-              <img src="images/music/loop.PNG" class="modalitems" onclick="openproj('pr8')">
-            </div>
-          </div>
-
-          <div class="filterdiv art print">
-            <div id="p7">
-              <img src="images/proj/st.png" class="modalitems" onclick="openproj('pr7')">
-            </div>
-          </div>
-
-          <div class="filterdiv art print">
-            <div id="p6">
-              <img src="images/art/cesium.jpg" class="modalitems" onclick="openproj('pr6')">
-            </div>
-          </div>
-
-          <div class="filterdiv music performance">
-            <div id="p5">
-              <img src="images/music/fire.jpg" class="modalitems" onclick="openproj('pr5')">
-            </div>
-          </div>
-
-          <div class="filterdiv art sculpture">
-            <div id="p4">
-              <img src="images/art/bat2.jpg" class="modalitems" onclick="openproj('pr4')">
-            </div>
-          </div>
-
-          <div class="filterdiv music performance">
-            <div id="p3">
-              <img src="images/music/bells.jpg" class="modalitems" onclick="openproj('pr3')">
-            </div>
-          </div>
-
-          <div class="filterdiv programs">
-            <div id="p2">
-              <img src="images/proj/dc1.PNG" class="modalitems" onclick="openproj('pr2')" style="mix-blend-mode:multiply">
-            </div>
-          </div>
-
-          <div class="filterdiv music programs">
-            <div id="p1">
-              <img src="images/music/synth.jpg" class="modalitems" onclick="openproj('pr1')">
-            </div>
-          </div>
-
+      <div class="filterdiv art sculpture">
+        <div id="p11">
+          <img src="images/art/settings.jpg" class="modalitems" onclick="openproj('pr11')">
         </div>
       </div>
 
-      <div class="thin2" id="tagstime">
-        <span class="btn active" style="font-size:2.2vw" onclick="filterSelection('all')">all</span>
-        <br><span class="btn" style="top:5.3%; font-size:2.2vw" onclick="filterSelection('music')">music</span>
-        <br><span class="btn" style="top:11.13%; font-size:2.2vw;" onclick="filterSelection('art')">art</span>
-        <br><span class="btn" style="top:16.7%; font-size:2.2vw;" onclick="filterSelection('programs')">programs</span>
-        <br><span class="btn" style="top:22.3%; font-size:2.2vw" onclick="filterSelection('performance')">performance</span>
-        <br><span class="btn" style="top:27.8%; font-size:2.2vw;" onclick="filterSelection('print')">print</span>
-        <br><span class="btn" style="top:33.3%; font-size:2.2vw;" onclick=" filterSelection('sculpture')">sculpture</span>
+
+      <div class="filterdiv music art sculpture">
+        <div id="p10">
+          <img src="images/proj/ca.JPG" class="modalitems" onclick="openproj('pr10')">
+        </div>
+      </div>
+
+      <div class="filterdiv music performance">
+        <div id="p9">
+          <img src="images/music/water.PNG" class="modalitems" onclick="openproj('pr9')">
+        </div>
+      </div>
+
+      <div class="filterdiv music programs">
+        <div id="p8">
+          <img src="images/music/loop.PNG" class="modalitems" onclick="openproj('pr8')">
+        </div>
+      </div>
+
+      <div class="filterdiv art print">
+        <div id="p7">
+          <img src="images/proj/st.png" class="modalitems" onclick="openproj('pr7')">
+        </div>
+      </div>
+
+      <div class="filterdiv art print">
+        <div id="p6">
+          <img src="images/art/cesium.jpg" class="modalitems" onclick="openproj('pr6')">
+        </div>
+      </div>
+
+      <div class="filterdiv music performance">
+        <div id="p5">
+          <img src="images/music/fire.jpg" class="modalitems" onclick="openproj('pr5')">
+        </div>
+      </div>
+
+      <div class="filterdiv art sculpture">
+        <div id="p4">
+          <img src="images/art/bat2.jpg" class="modalitems" onclick="openproj('pr4')">
+        </div>
+      </div>
+
+      <div class="filterdiv music performance">
+        <div id="p3">
+          <img src="images/music/bells.jpg" class="modalitems" onclick="openproj('pr3')">
+        </div>
+      </div>
+
+      <div class="filterdiv programs">
+        <div id="p2">
+          <img src="images/proj/dc1.PNG" class="modalitems" onclick="openproj('pr2')" style="mix-blend-mode:multiply">
+        </div>
+      </div>
+
+      <div class="filterdiv music programs">
+        <div id="p1">
+          <img src="images/music/synth.jpg" class="modalitems" onclick="openproj('pr1')">
+        </div>
       </div>
 
     </div>
@@ -739,7 +698,7 @@
     var btns = btnContainer.getElementsByClassName("btn");
     for (var i = 0; i < btns.length; i++) {
       btns[i].addEventListener("click", function() {
-        var current = document.getElementsByClassName("active");
+        var current = document.getElementsByClassName("btn active");
         current[0].className = current[0].className.replace(" active", "");
         this.className += " active";
       });
