@@ -15,7 +15,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Lato:300i&display=swap" rel="stylesheet">
 
 
   <style type="text/css">
@@ -67,7 +67,7 @@
 
     .head {
       font-size: 26px;
-      font-family: 'Reenie Beanie', cursive;
+      font-family: 'Lato', sans-serif;
       margin-bottom: 10px;
 
       color: {
@@ -110,12 +110,14 @@
       position: fixed;
       overflow-y: scroll;
       border: 0px dotted #bed0ff;
+      opacity: 1;
     }
 
     .grid-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: auto;
+      grid-gap: 2vh;
       background-color: rgba(256, 256, 256, 0);
     }
 
@@ -123,14 +125,13 @@
       background-color: rgba(255, 255, 255, 0);
       text-align: center;
       font-size: 30px;
-      padding: 1.2vh;
+      object-fit: cover;
     }
 
     /* project tiles */
     .grid-container img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
     }
 
     .filterdiv {
@@ -145,7 +146,7 @@
     /* modal */
     .modal {
       position: absolute;
-      padding: 50px;
+      padding-top: 2vh;
       width: 100%;
       height: 100%;
       bottom: 0px;
@@ -201,23 +202,23 @@
     }
 
     .modal-content {
-
       max-width: 85%;
       max-height: 96%;
       padding-left: 50px;
       padding-right: 50px;
       border-radius: 15px;
-      margin-top: 2%;
+      margin-top: 2vh;
+      margin-left: 7.5vw;
       display: block;
-      box-shadow: 0 0 0 999px rgba(0, 0, 0, .3);
+      box-shadow: 0 0 0 999px rgba(0, 0, 0, .5);
       overflow-y: scroll;
       overflow-x: hidden;
+      background-color: rgba(0, 0, 0, 0.2);
     }
 
     .modal-content img {
       max-width: 100%;
       display: block;
-      margin: 20px;
     }
 
     .close {
@@ -229,7 +230,7 @@
       font-size: 40px;
       font-weight: bold;
       transition: 0.3s;
-      font-family: 'Reenie Beanie', cursive;
+      font-family: 'Montserrat', sans-serif;
     }
 
     .close:hover,
@@ -239,19 +240,52 @@
       cursor: pointer;
     }
 
-    .modalitems {
-      opacity: 1;
-      filter: grayscale(75%);
-      -moz-transition: all 1s ease-in;
+    .holdtext {
+      text-align: center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #000;
+      -moz-transition: all 1 ease-in;
       -o-transition: all 1s ease-in;
       -webkit-transition: all 1s ease-in;
       transition: all 1s ease-in;
-      z-index: 1;
+      opacity: 0;
+      pointer-events: none;
+      display: grid;
+    }
+
+    h1 {
+      color: #FFFFFF;
+      font-family: 'Lato', sans-serif;
+      font-size: 3vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1.2;
+    }
+
+    .modalitems {
+      filter: brightness(100%);
+      -moz-transition: all 1 ease-in;
+      -o-transition: all 1s ease-in;
+      -webkit-transition: all 1s ease-in;
+      transition: all 1s ease-in;
+      width: 100%;
+      height: auto;
     }
 
     .modalitems:hover {
+      filter: brightness(100%);
       cursor: pointer;
-      filter: grayscale(0%);
+    }
+
+    .modalitems:hover .holdtext {
+      opacity: .8;
     }
 
     .split:after {
@@ -282,7 +316,6 @@
       text-align: center;
       font-size: 12px;
       font-style: italic;
-      padding-bottom: 10px;
     }
 
     video {
@@ -310,10 +343,11 @@
 
     .btn:hover {
       background-color: rgba(255, 255, 255, 0);
-
+      color: #345a5e
     }
 
-    .btn.active {
+    .nowbutton,
+    .btn:active {
       background-color: rgba(255, 255, 255, 0);
       color: #345a5e;
     }
@@ -494,40 +528,40 @@
     <div class="modal-content">
       <span class="close">x</span>
       <p class="head">zither sin string</p>
-      <div class="split">
-        <div class="wide"><i>zither sin string</i>, my capstone project for the minor in Applied Music Technology, is an electronic instrument driven by gestures. It uses two ultrasonic distance sensors and an Adafruit APDS9960 breakout board. The
-          breakout board is capable of tracking gestures, color, and distance. Currently, only the gesture tracking is in use, detecting left, right, up, and downward motions. When these are reported to the software, sound is triggered. The different
-          motions control the timbre of sound, changing the constants input to my syntehsizer. The ultrasonic distance sensors, positioned on opposite sides of the instrument, are used to measure how far away the performer's hand is. This distance is
-          then transformed into pitches. The program stores the most recent pitch, and outputs it through the desired synthesis when a gesture is detected. <br>
-          <img src="images/proj/ca1.JPG" style="margin-top:10px">
-          <div class="capt">building the casing</div>
-          &emsp; One of the extended goals of this project is to implement multiple synthesizers and create an "all purpose string instrument." This would use different gestures to switch between bowed string synthesis and plucked string synthesis,
-          and potentially use the distance tracking capabilities of the APDS to trigger hammered string timbres.
-        </div>
-        <div class="thin">
-          <img src="images/proj/ca2.jpg">
-          <div class="capt">Arduino and sensors</div><br>
-        </div>
-      </div>
+      <div style="width: 30%; float:right; margin-left:20px;">
+        <img src="images/proj/ca2.jpg">
+        <div class="capt">Arduino and sensors</div><br>
+      </div><br><br>
 
-      <div class="split">
-        <div class="thin">
-          &emsp; To assemble the hardware, I learned how to solder and desolder. The ultrasonic sensors had to have the pins removed and swapped with new ones so they would point upward. I wired the components to a shield so the components can be
-          easily removed from the Arduino. In designing the casing, I considered multiple options, including making the entire thing out of wood. Aesthetically, I wanted the instrument to appear like a dulcimer, so I decided to make the casing out of
-          a decorative box. I printed my design so i could cut it cleanly, and I'm quite pleased with the result. It is supported with wooden blocks and pegs, two of which keep the electronics, which are attached to a sheet of craft board, in line
-          with the lid.
-          <video width="100%" height="100%" poster="images/proj/ca4.PNG" controls>
-            <source src="images/music/capstone.mp4" type="video/mp4"></video>
-          <div class="capt">performance</div><br>
-        </div>
-        <div class="wide">
-          <img src="images/proj/ca3.JPG" style="margin-top:10px">
-          <div class="capt">dissassembled instrument</div><br>
-          <br>
-        </div>
-      </div>
+      <i>zither sin string</i>, my capstone project for the minor in Applied Music Technology, is an electronic instrument driven by gestures. It uses two ultrasonic distance sensors and an Adafruit APDS9960 breakout board. The
+      breakout board is capable of tracking gestures, color, and distance. Currently, only the gesture tracking is in use, detecting left, right, up, and downward motions. When these are reported to the software, sound is triggered. The different
+      motions control the timbre of sound, changing the constants input to my syntehsizer. The ultrasonic distance sensors, positioned on opposite sides of the instrument, are used to measure how far away the performer's hand is. This distance is
+      then transformed into pitches. The program stores the most recent pitch, and outputs it through the desired synthesis when a gesture is detected. <br><br>
+      <div style="margin-right:20px; width: 40%; float:left;">
+        <img src="images/proj/ca1.JPG">
+        <div class="capt">building the casing</div>
+      </div><br><br>
+      &emsp; One of the extended goals of this project is to implement multiple synthesizers and create an "all purpose string instrument." This would use different gestures to switch between bowed string synthesis and plucked string synthesis,
+      and potentially use the distance tracking capabilities of the APDS to trigger hammered string timbres.
+      <br><br>
+      <div style="margin-left:20px; width: 50%; float:right;">
+        <img src="images/proj/ca3.JPG">
+        <div class="capt">dissassembled instrument</div>
+      </div><br><br>
+      <div style="max-width: 500px; float:right">
+        <video width="100%" height="100%" poster="images/proj/ca4.PNG" controls>
+          <source src="images/music/capstone.mp4" type="video/mp4"></video>
+        <div class="capt">performance</div><br>
+      </div><br><br>
+      &emsp; To assemble the hardware, I learned how to solder and desolder. The ultrasonic sensors had to have the pins removed and swapped with new ones so they would point upward. I wired the components to a shield so the components can be
+      easily removed from the Arduino. In designing the casing, I considered multiple options, including making the entire thing out of wood. Aesthetically, I wanted the instrument to appear like a dulcimer, so I decided to make the casing out of
+      a decorative box. I printed my design so i could cut it cleanly, and I'm quite pleased with the result. It is supported with wooden blocks and pegs, two of which keep the electronics, which are attached to a sheet of craft board, in line
+      with the lid.<br><br>
+
+
     </div>
   </div>
+
 
   <div id="pr11" class="modal">
     <div class="modal-content">
@@ -547,83 +581,117 @@
     <img src="images/flor16.png"> <a href="/">home</a> <a href="/bio">bio</a> <a href="/resume">resume</a> <a href="/portfolio">portfolio</a> <a href="/contact" style="padding-right:5px;">contact</a><img src="images/flor16.png" id="flipit">
 
     <br><br>
-    <span class="btn active" style="padding-left:10px" onclick="filterSelection('all')">all</span>
-    <span class="btn" style="top:5.3%;" onclick="filterSelection('music')">music</span>
-    <span class="btn" style="top:11.13%;" onclick="filterSelection('art')">art</span>
-    <span class="btn" style="top:16.7%;" onclick="filterSelection('programs')">programs</span>
-    <span class="btn" style="top:22.3%;" onclick="filterSelection('performance')">performance</span>
-    <span class="btn" style="top:27.8%;" onclick="filterSelection('print')">print</span>
-    <span class="btn" style="top:33.3%;" onclick=" filterSelection('sculpture')">sculpture</span>
-  </div>
+    <div id="tagstime">
+      <a class="btn nowbutton" onclick="filterSelection('all')">all</a>
+      <a class="btn" onclick="filterSelection('music')">music</a>
+      <a class="btn" onclick="filterSelection('art')">art</a>
+      <a class="btn" onclick="filterSelection('programs')">programs</a>
+      <a class="btn" onclick="filterSelection('performance')">performance</a>
+      <a class="btn" onclick="filterSelection('print')">print</a>
+      <a class="btn" onclick=" filterSelection('sculpture')">sculpture</a>
+    </div>
   </div>
 
   <div id="bigcontainer">
     <div class="grid-container">
 
-      <div class="filterdiv art sculpture">
+      <div class="filterdiv art sculpture modalitems">
         <div id="p11">
-          <img src="images/art/settings.jpg" class="modalitems" onclick="openproj('pr11')">
+          <img src="images/art/settings.jpg" onclick="openproj('pr11')">
+          <div class="holdtext">
+            <h1>on settings</h1>
+          </div>
         </div>
       </div>
 
 
-      <div class="filterdiv music art sculpture">
+      <div class="filterdiv music art sculpture modalitems">
         <div id="p10">
-          <img src="images/proj/ca.JPG" class="modalitems" onclick="openproj('pr10')">
+          <img src="images/proj/ca.JPG" onclick="openproj('pr10')">
+          <div class="holdtext">
+            <h1>zither sin string</h1>
+          </div>
         </div>
       </div>
 
-      <div class="filterdiv music performance">
+      <div class="filterdiv music performance modalitems">
         <div id="p9">
-          <img src="images/music/water.PNG" class="modalitems" onclick="openproj('pr9')">
+          <img src="images/music/water.PNG" onclick="openproj('pr9')">
+          <div class="holdtext">
+            <h1>at the edge of the water...</h1>
+          </div>
         </div>
       </div>
 
-      <div class="filterdiv music programs">
+      <div class="filterdiv music programs modalitems">
         <div id="p8">
-          <img src="images/music/loop.PNG" class="modalitems" onclick="openproj('pr8')">
+          <img src="images/music/loop.PNG" onclick="openproj('pr8')">
+          <div class="holdtext">
+            <h1>digital loop pedal</h1>
+          </div>
         </div>
       </div>
 
-      <div class="filterdiv art print">
+      <div class="filterdiv art print modalitems">
         <div id="p7">
-          <img src="images/proj/st.png" class="modalitems" onclick="openproj('pr7')">
+          <img src="images/proj/st.png" onclick="openproj('pr7')">
+          <div class="holdtext">
+            <h1>storytelling</h1>
+          </div>
         </div>
       </div>
 
-      <div class="filterdiv art print">
+      <div class="filterdiv art print modalitems">
         <div id="p6">
-          <img src="images/art/cesium.jpg" class="modalitems" onclick="openproj('pr6')">
+          <img src="images/art/cesium.jpg" onclick="openproj('pr6')">
+          <div class="holdtext">
+            <h1>cesium-137</h1>
+          </div>
         </div>
       </div>
 
-      <div class="filterdiv music performance">
+      <div class="filterdiv music performance modalitems">
         <div id="p5">
-          <img src="images/music/fire.jpg" class="modalitems" onclick="openproj('pr5')">
+          <img src="images/music/fire.jpg" onclick="openproj('pr5')">
+          <div class="holdtext">
+            <h1>fire and ice</h1>
+          </div>
         </div>
       </div>
 
-      <div class="filterdiv art sculpture">
+      <div class="filterdiv art sculpture modalitems">
         <div id="p4">
-          <img src="images/art/bat2.jpg" class="modalitems" onclick="openproj('pr4')">
+          <img src="images/art/bat2.jpg" onclick="openproj('pr4')">
+          <div class="holdtext">
+            <h1>reflections</h1>
+          </div>
         </div>
       </div>
 
-      <div class="filterdiv music performance">
+      <div class="filterdiv music performance modalitems">
         <div id="p3">
-          <img src="images/music/bells.jpg" class="modalitems" onclick="openproj('pr3')">
+          <img src="images/music/bells.jpg" onclick="openproj('pr3')">
+          <div class="holdtext">
+            <h1>the bells</h1>
+          </div>
         </div>
       </div>
 
-      <div class="filterdiv programs">
+      <div class="filterdiv programs modalitems">
         <div id="p2">
-          <img src="images/proj/dc1.PNG" class="modalitems" onclick="openproj('pr2')" style="mix-blend-mode:multiply">
+          <img src="images/proj/dc1.PNG" onclick="openproj('pr2')" style="mix-blend-mode:multiply">
+          <div class="holdtext">
+            <h1>nuuh-chah-nulth language project</h1>
+          </div>
         </div>
       </div>
 
-      <div class="filterdiv music programs">
+      <div class="filterdiv music programs modalitems">
         <div id="p1">
-          <img src="images/music/synth.jpg" class="modalitems" onclick="openproj('pr1')">
+          <img src="images/music/synth.jpg" onclick="openproj('pr1')">
+          <div class="holdtext">
+            <h1>sound building synthesizer</h1>
+          </div>
         </div>
       </div>
 
@@ -645,11 +713,17 @@
     function openproj(pNum) {
       var project = document.getElementById(pNum);
       project.style.display = "block";
-      hide.style.visibility = "hidden";
+      hide.style.opacity = "0";
       for (var i = 0; i < span.length; i++) {
         span[i].onclick = function() {
           project.style.display = "none";
-          hide.style.visibility = "visible";
+          hide.style.opacity = "1";
+        }
+      }
+      window.onclick = function(event) {
+        if (event.target == project) {
+          project.style.display = "none";
+          hide.style.opacity = "1";
         }
       }
     }
@@ -693,14 +767,14 @@
       element.className = arr1.join(" ");
     }
 
-    // Add active class to the current button (highlight it)
+    // Add nowbutton class to the current button (highlight it)
     var btnContainer = document.getElementById("tagstime");
     var btns = btnContainer.getElementsByClassName("btn");
     for (var i = 0; i < btns.length; i++) {
       btns[i].addEventListener("click", function() {
-        var current = document.getElementsByClassName("btn active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
+        var current = document.getElementsByClassName("nowbutton");
+        current[0].className = current[0].className.replace(" nowbutton", "");
+        this.className += " nowbutton";
       });
     }
   </script>
