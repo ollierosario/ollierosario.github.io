@@ -26,21 +26,11 @@
   body {
     line-height: 125%;
     background: #ddf2e8 url("images/grid.jpg") 75% 0px/211px 375px repeat-y border-box fixed;
-    background: linear-gradient(to bottom, rgba(221, 242, 232, 0.8) 0%, rgba(190, 208, 255, 0.64) 100%),
+    background: linear-gradient(to bottom, rgba(190, 208, 255, 0.8) 0%, rgba(25, 50, 50, 0.64) 100%),
       url("images/grid.jpg") 75% 0px/211px 375px repeat-y border-box fixed;
     background-attachment: fixed;
     font-family: 'Montserrat',
       sans-serif;
-  }
-
-  img.florals {
-    width: 211px;
-    height: auto;
-    position: absolute;
-    left: calc(75% - 158.25px);
-    top: 0px overflow: hidden;
-    mix-blend-mode: multiply;
-    pointer-events: none;
   }
 
   /* scrollbar */
@@ -135,7 +125,6 @@
     height: 85vh;
     margin-left: 15%;
     margin-top: 8vh;
-    padding: 15px;
     position: fixed;
     overflow-y: hidden;
     border: 2px dotted #bed0ff;
@@ -143,28 +132,18 @@
   }
 
   #abtcontainer {
-    width: 70%;
-    height: 85%;
-    margin-top: 8%;
-    margin-left: 15%;
+    width: 100%;
+    height: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
     overflow-y: auto;
   }
 
   #abt {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-  }
-
-  #icono {
-    position: fixed;
-    bottom: 7vh;
-    left: calc(15% - 133px);
-    margin-left: 0px;
-    margin-right: 0px;
-    text-align: left;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 5;
   }
 </style>
 
@@ -175,11 +154,6 @@
   <div class="nav">
     <img src="images/flor16.png"> <a href="/">home</a> <a href="/bio">bio</a> <a href="/resume">resume</a> <a href="/portfolio">portfolio</a> <a href="/contact">contact</a><img src="images/flor16.png" id="flipit">
   </div>
-
-  <div id="icono">
-    <img src="images/flor.png" style="width:75%; display:inline-block; margin-left:0px; margin-right:0px">
-  </div>
-  <img src="images/f2.png" class="florals" id="f2">
 
   <div id="bigcontainer">
     <div id="abtcontainer">
