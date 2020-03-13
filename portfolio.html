@@ -17,71 +17,9 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:300i&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" type="text/css" href="style.css">
 
   <style type="text/css">
-    /* basic styles */
-    body {
-      line-height: 125%;
-      background: #ddf2e8 url("images/grid.jpg") 75% 0px/211px 375px repeat-y border-box fixed;
-      background: linear-gradient(to bottom, rgba(190, 208, 255, 0.8) 0%, rgba(25, 50, 50, 0.64) 100%),
-        url("images/grid.jpg") 75% 0px/211px 375px repeat-y border-box fixed;
-      background-attachment: fixed;
-      font-family: 'Montserrat',
-        sans-serif;
-    }
-
-    /* scrollbar */
-    ::-webkit-scrollbar {
-      width: 3px;
-      height: 5px;
-      background: rgba(255, 255, 255, 0);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #557;
-      border-radius: 16px;
-    }
-
-    /* permalinks */
-    #perma {
-      position: absolute;
-      right: -75px;
-      letter-spacing: .5px;
-      text-transform: lowercase;
-      text-decoration: none;
-    }
-
-    a:link,
-    a:visited,
-    a:active {
-      color: #345a5e;
-      text-decoration: none;
-      font-weight: normal;
-    }
-
-    a:hover {
-      color: #858585;
-      text-decoration: none;
-      font-weight: normal;
-    }
-
-    .head {
-      font-size: 26px;
-      font-family: 'Lato', sans-serif;
-      margin-bottom: 10px;
-
-      color: {
-        color: Title
-      }
-
-      ;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    /* Style the header */
     .nav {
       font-family: 'Montserrat', sans-serif;
       float: left;
@@ -90,26 +28,13 @@
       padding-top: 12px;
     }
 
-    .nav a {
-      padding-right: 15px;
-    }
-
-    #flipit {
-      transform: scaleX(-1);
-      -moz-transform: scaleX(-1);
-      -webkit-transform: scaleX(-1);
-      -o-transform: scaleX(-1);
-    }
-
     #bigcontainer {
-      background-color: rgba(190, 208, 255, 0);
-      width: 85%;
-      height: 85vh;
-      margin-left: 7.5%;
       margin-top: 11vh;
-      position: fixed;
-      overflow-y: scroll;
+      width: 85%;
+      margin-left: 7.5%;
+      background-color: rgba(0, 0, 0, 0);
       border: 0px dotted #bed0ff;
+      border-radius: 0px;
       opacity: 1;
     }
 
@@ -206,6 +131,7 @@
       max-height: 96%;
       padding-left: 50px;
       padding-right: 50px;
+      padding-bottom: 50px;
       border-radius: 15px;
       margin-top: 2vh;
       margin-left: 7.5vw;
@@ -297,25 +223,18 @@
     .even {
       float: left;
       width: 50%;
-      padding: 10px 10px 0px 0px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
 
-    .wide {
+    .leftimg {
+      margin: 0px 20px 20px 0px;
       float: left;
-      width: 60%;
-      padding: 10px 10px 0px 0px;
     }
 
-    .thin {
-      float: left;
-      width: 40%;
-      padding: 10px 10px 0px 0px;
-    }
-
-    .capt {
-      text-align: center;
-      font-size: 12px;
-      font-style: italic;
+    .rightimg {
+      margin: 0px 0px 20px 20px;
+      float: right;
     }
 
     video {
@@ -326,6 +245,7 @@
 
     audio {
       position: relative;
+      padding: 5px;
       width: 100%;
       height: auto;
     }
@@ -395,19 +315,17 @@
     <div class="modal-content">
       <span class="close">x</span>
       <p class="head">Nuu-chah-nulth Language Project</p>
-      <div class="split">
-        <p><img src="images/proj/dc2.gif" style="width:50%; height:auto; float: left; margin: 0px 20px 15px 0px;">
-          ʕiniiƛm̓inḥč̓a t̕aatn̓aʔis, or <i>The Dog Children</i>, is a story told by Caroline Little for her and Toshihide Nakayama's Nuu-chah-nulth language documentation project, <i>Caroline Little's Nuu-chah-nulth (Ahousaht) Texts with Grammatical
-            Analysis</i>. Nuuchahnulth, like all BC First Nations languages, is endangered. The Ahousaht dialect of Nuuchahnulth has, as of 2011, 154 learning speakers. An aspect of the language many learners struggle with is the highly polymorphemic
-          nature of the words. Words are formed using roots and affixes, but they cannot be combined randomly, the language, like any other, follows a grammar. In the case of Nuuchahnulth, this grammar is very different from what English speakers
-          have been exposed to. Due to many destructive effects of colonialism, learners are not often able to learn the language through immersion. Because of this, learners, regardless of age, are very likely to speak English.</p>
-        <p><img src="images/proj/dc3.PNG" style="width:30%; height:auto; float:right; margin 15px 0px 0px 20px;">
-          &emsp; To mediate the difficulty of understanding word structure, I prepared an interactive website presenting the story ʕiniiƛm̓inḥč̓a t̕aatn̓aʔis. On the site, morphemes are highlighted blue or purple depending on whether they are lexical
-          or functional. Lexical morphemes carry meaning, while functional morphemes carry a grammatical purpose. An example of a functional morpheme in English would be -ed for past tense. The example on the left shows how hovering over a
-          highlighted morpheme provides its definition. The other pages on the site have explanations of word construction like this, and comprehension questions designed to help learners build words. On every page, there is a vocabulary list in the
-          sidebar.
-        </p>
-      </div>
+      <p><img src="images/proj/dc2.gif" class="leftimg" style="width:50%; height:auto;">
+        ʕiniiƛm̓inḥč̓a t̕aatn̓aʔis, or <i>The Dog Children</i>, is a story told by Caroline Little for her and Toshihide Nakayama's Nuu-chah-nulth language documentation project, <i>Caroline Little's Nuu-chah-nulth (Ahousaht) Texts with Grammatical
+          Analysis</i>. Nuuchahnulth, like all BC First Nations languages, is endangered. The Ahousaht dialect of Nuuchahnulth has, as of 2011, 154 learning speakers. An aspect of the language many learners struggle with is the highly polymorphemic
+        nature of the words. Words are formed using roots and affixes, but they cannot be combined randomly, the language, like any other, follows a grammar. In the case of Nuuchahnulth, this grammar is very different from what English speakers
+        have been exposed to. Due to many destructive effects of colonialism, learners are not often able to learn the language through immersion. Because of this, learners, regardless of age, are very likely to speak English.</p>
+      <p><img src="images/proj/dc3.PNG" class="rightimg" style="width:30%; height:auto;">
+        &emsp; To mediate the difficulty of understanding word structure, I prepared an interactive website presenting the story ʕiniiƛm̓inḥč̓a t̕aatn̓aʔis. On the site, morphemes are highlighted blue or purple depending on whether they are lexical
+        or functional. Lexical morphemes carry meaning, while functional morphemes carry a grammatical purpose. An example of a functional morpheme in English would be -ed for past tense. The example on the left shows how hovering over a
+        highlighted morpheme provides its definition. The other pages on the site have explanations of word construction like this, and comprehension questions designed to help learners build words. On every page, there is a vocabulary list in the
+        sidebar.
+      </p>
     </div>
   </div>
 
@@ -417,7 +335,7 @@
       <div class="head">The Bells</div>
       <div class="fluidMedia"><iframe width="100%" src="https://www.youtube.com/embed/IQI38cqshgU?modestbranding=1;rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
       <p>Programmers: Ollie Rosario, Micki Lee-Smith<br> Choreographer, Dancer: Gemma Tomasky </p>
-      <p style="font-size:12px"><i>The Bells</i> is a piece inspired by Edgar Allan Poe's poem of the same name. Our interpretation of the change in tone through the poem gave our piece a narrative of instability. The character moves through zones
+      <p><i>The Bells</i> is a piece inspired by Edgar Allan Poe's poem of the same name. Our interpretation of the change in tone through the poem gave our piece a narrative of instability. The character moves through zones
         that are increasingly chaotic and dangerous, becoming more scared and confused, before finally being caught in the center. The sound samples used in each zone are meant to reflect this, and the themes of loss and madness. </p>
     </div>
   </div>
@@ -426,20 +344,23 @@
     <div class="modal-content">
       <span class="close">x</span>
       <p class="head">reflections</p>
-      <img src="images/art/r2.JPG" width="35%" style="float:left;">
-      <p>Reflections, made in the aftermath of hurricane Irma, challenges the viewer to understand the role of colonialism in the environmental disasters plaguing Puerto Rico. The mirrors incorporate the viewer into the work, placing them in the
-        position of an onlooker. The flora and fauna are endemic to the island, and chosen to display the natural diversity. The handmade figures are to scale, the same size as real specimens.</p>
-      <img src="images/art/flor.jpg" width="40%" style="float:right;">
-      <p>In planning this sculpture, I researched species endemic to Puerto Rico. One of the species depicted is <i>Thespesia grandiflora</i>, known as la flor de maga. It is the national flower of Puerto Rico. While we are not a sovereign people,
-        there is a strong national identity that is often rooted in the natural features of the island. This flower is enormous, typically measuring 13 cm, and, like all the other wire figures in <i>Reflections</i>, has been depicted to scale.</p>
-      <p>Also close to the identity of the island is the coquí. The word coquí refers to mating call of the males, and encompasses multiple species. Less iconic are bats, the only land mammals native to Puerto Rico. The wing featured is that of a big
-        brown bat, <i>Eptesicus fuscus</i>. Bats are essential to limit the population of mosquitoes on the island.</p>
+      <div class="split">
+        <img src="images/art/r2.JPG" width="35%" class="leftimg">
+        <p>Reflections, made in the aftermath of hurricane Irma, challenges the viewer to understand the role of colonialism in the environmental disasters plaguing Puerto Rico. The mirrors incorporate the viewer into the work, placing them in the
+          position of an onlooker. The flora and fauna are endemic to the island, and chosen to display the natural diversity. The handmade figures are to scale, the same size as real specimens.</p>
+        <img src="images/art/lizard.jpg" width="40%" class="rightimg">
+        <p>In planning this sculpture, I researched species endemic to Puerto Rico. One of the species depicted is <i>Thespesia grandiflora</i>, known as la flor de maga. It is the national flower of Puerto Rico. While we are not a sovereign people,
+          there is a strong national identity that is often rooted in the natural features of the island. This flower is enormous, typically measuring 13 cm, and, like all the other wire figures in <i>Reflections</i>, has been depicted to scale.</p>
+        <p>Also close to the identity of the island is the coquí. The word coquí refers to mating call of the males, and encompasses multiple species. Less iconic are bats, the only land mammals native to Puerto Rico. The wing featured is that of a
+          big
+          brown bat, <i>Eptesicus fuscus</i>. Bats are essential to limit the population of mosquitoes on the island.</p>
+      </div>
       <div class="split">
         <div class="even">
-          <img src="images/art/lizard.jpg" width="90%">
+          <img src="images/art/bat2.jpg" width="100%">
         </div>
         <div class="even">
-          <img src="images/art/coqui.jpg" width="90%">
+          <img src="images/art/coqui.jpg" width="100%">
         </div>
       </div>
     </div>
@@ -451,7 +372,7 @@
       <div class="head">Fire and Ice</div>
       <div class="fluidMedia"><iframe width="100%" src="https://www.youtube.com/embed/-hutGz2QRWI?modestbranding=1;rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
       <p>Programmers: Ollie Rosario, Chantelle Ko, Elizabeth Feng<br> Violin: Chantelle Ko </p>
-      <p style="font-size:12px"><i>Fire and Ice</i> discusses the relationships between extremes. The two contrasting elements are explored through a range of their manifestations: volcanic eruptions, ice floes shifting, houses burning, and more all
+      <p><i>Fire and Ice</i> discusses the relationships between extremes. The two contrasting elements are explored through a range of their manifestations: volcanic eruptions, ice floes shifting, houses burning, and more all
         can be heard in the piece. We progress through their various similar and dissimilar sounds and forces, keeping their potential for destruction in mind.</p>
     </div>
   </div>
@@ -460,16 +381,12 @@
     <div class="modal-content">
       <span class="close">x</span>
       <p class="head">cesium-137</p>
-      <div class="split">
-        <div class="wide">
-          <p><i>cesium-137</i>, a woodblock print carved on a Medex block, explores decay in the aftermath of the Chernobyl disaster. I focus on the contexts of ecological and message decay. The nearby city of Pripyat was established expressly to
-            house the workers of the power plant, in an age where the prevailing message was that of the sculpture <i>Peaceful Atom</i>: nuclear power was the future, and it was safe and efficient. In the context of message decay, the response at
-            Pripyat represents a near instantaneous corruption of meaning. The city was rendered a ghost town, and its message instantly became one of disaster rather than prosperity. In my print, this is reflected by the iconic ferris wheel from the
-            never opened Pripyat Amusement Park.</p>
-        </div>
-        <div class="thin"><img src="images/art/c3.JPG" style="margin-top:15px;"></div>
-      </div>
-      <img src="images/art/c2.jpg" width="40%" style="margin-bottom:25px; float:left;">
+      <img src="images/art/c3.JPG" width="51%" class="rightimg">
+      <p><i>cesium-137</i>, a woodblock print carved on a Medex block, explores decay in the aftermath of the Chernobyl disaster. I focus on the contexts of ecological and message decay. The nearby city of Pripyat was established expressly to
+        house the workers of the power plant, in an age where the prevailing message was that of the sculpture <i>Peaceful Atom</i>: nuclear power was the future, and it was safe and efficient. In the context of message decay, the response at
+        Pripyat represents a near instantaneous corruption of meaning. The city was rendered a ghost town, and its message instantly became one of disaster rather than prosperity. In my print, this is reflected by the iconic ferris wheel from the
+        never opened Pripyat Amusement Park.</p>
+      <img src="images/art/c2.jpg" width="51%" class="rightimg">
       <p>The ecological context of the print surrounds a lack of decay. Within the Chernobyl exclusionzone, litter mass loss is 40% lower than in the rest of Ukraine. This is thought to be a result of the disaster's impact on the populations of
         decomposers. Within the Red Forest, this is most notable. The trees that died from the radiation levels took on a red tint, depicted in the choice of ink in the print. I used noise to reflect the high levels of deceased organic matter on the
         floor, which carries a sense of disorder and stasis. There is a nature of slowed time in this space, where nothing grows and nothing decays. Cesium, the most prominent element in the exclusion zone, just reached its first half life in 2016,
@@ -482,19 +399,18 @@
       <span class="close">x</span>
       <p class="head">storytelling</p>
       <div class="split">
-        <div class="wide"><i>storytelling</i> is a visual project concerning perceived limitations of print media. Through use of embroidery, watercolor, collage, and more, I create an abstract story. The plot is highly open, rendering the viewer
-          able to interpret the project however they see fit. While still ongoing, the end goal is to put together a small book of these illustrations, with my personal narrative in mind, but without words. <br>
-          <img src="images/proj/st1.jpg" style="margin-top:15px;"></div>
-        <div class="thin"><img src="images/proj/st2.jpg">
-          <p>At this point, I am finished with the pages present here. I draw inspiration from magical realism and childhood memories of reading fantasy novels.</p>
-        </div>
+        <img src="images/proj/st2.jpg" class="leftimg" width="25%">
+        <p><i>storytelling</i> is a visual project concerning perceived limitations of print media. Through use of embroidery, watercolor, collage, and more, I create an abstract story. The plot is highly open, rendering the viewer
+          able to interpret the project however they see fit. While still ongoing, the end goal is to put together a small book of these illustrations, with my personal narrative in mind, but without words. </p>
+        <img src="images/proj/st4.jpg" class="rightimg" width="25%">
+        <p>At this point, I am finished with the pages present here. I draw inspiration from magical realism and childhood memories of reading fantasy novels.</p>
       </div>
       <div class="split" style="padding-top:0px">
         <div class="even">
           <img src="images/proj/st3.jpg" style="margin-bottom:25px">
         </div>
         <div class="even">
-          <img src="images/proj/st4.jpg">
+          <img src="images/proj/st1.jpg">
         </div>
       </div>
     </div>
@@ -505,9 +421,11 @@
       <span class="close">x</span>
       <div class="head" style="font-size:26px">Digital Loop Pedal</div>
       <img src="images/music/loop.PNG" style="max-width:100%">
-      <p>Download available <a href="https://www.dropbox.com/s/uprtt34civov837/soundRecorder.zip?dl=0">here</a>. Sample audio created with this patch:</p>
-      <audio controls>
-        <source src="images/music/sample.mp3" type="audio/mpeg"></audio>
+      <div class="split">
+        <p>Download available <a href="https://www.dropbox.com/s/uprtt34civov837/soundRecorder.zip?dl=0">here</a>. Sample audio created with this patch:</p>
+      </div>
+      <p><audio controls style="height: 40px;">
+          <source src="images/music/sample.mp3" type="audio/mpeg"></audio></p>
       <p>This patch allows users to loop up to four audio samples of any length. Samples can be recorded in real time or opened from a file, and the interface allows for randomized pitch shifting.</p>
     </div>
   </div>
@@ -519,7 +437,7 @@
       <video width="100%" height="100%" poster="images/music/water.PNG" controls>
         <source src="images/music/water2.mp4" type="video/mp4"></video>
       <p>Programmers: Ollie Rosario, Ramsey Sakada<br> Choreographer, Dancer: Gemma Tomasky </p>
-      <p style="font-size:12px">This piece, for dancer and virtual cellist, explores the interaction between the natural and the electronic. The GameTrak controls used by the dancer and the cellist control the output of sound. At their most extreme,
+      <p>This piece, for dancer and virtual cellist, explores the interaction between the natural and the electronic. The GameTrak controls used by the dancer and the cellist control the output of sound. At their most extreme,
         they also distort the organic sounds and alter the cello's timbre.</p>
     </div>
   </div>
@@ -528,36 +446,24 @@
     <div class="modal-content">
       <span class="close">x</span>
       <p class="head">zither sin string</p>
-      <div style="width: 30%; float:right; margin-left:20px;">
-        <img src="images/proj/ca2.jpg">
-        <div class="capt">Arduino and sensors</div><br>
-      </div><br><br>
 
-      <i>zither sin string</i>, my capstone project for the minor in Applied Music Technology, is an electronic instrument driven by gestures. It uses two ultrasonic distance sensors and an Adafruit APDS9960 breakout board. The
-      breakout board is capable of tracking gestures, color, and distance. Currently, only the gesture tracking is in use, detecting left, right, up, and downward motions. When these are reported to the software, sound is triggered. The different
-      motions control the timbre of sound, changing the constants input to my syntehsizer. The ultrasonic distance sensors, positioned on opposite sides of the instrument, are used to measure how far away the performer's hand is. This distance is
-      then transformed into pitches. The program stores the most recent pitch, and outputs it through the desired synthesis when a gesture is detected. <br><br>
-      <div style="margin-right:20px; width: 40%; float:left;">
-        <img src="images/proj/ca1.JPG">
-        <div class="capt">building the casing</div>
-      </div><br><br>
-      &emsp; One of the extended goals of this project is to implement multiple synthesizers and create an "all purpose string instrument." This would use different gestures to switch between bowed string synthesis and plucked string synthesis,
-      and potentially use the distance tracking capabilities of the APDS to trigger hammered string timbres.
-      <br><br>
-      <div style="margin-left:20px; width: 50%; float:right;">
-        <img src="images/proj/ca3.JPG">
-        <div class="capt">dissassembled instrument</div>
-      </div><br><br>
-      <div style="max-width: 500px; float:right">
+      <img src="images/proj/ca2.jpg" class="rightimg" width="20%">
+      <p><i>zither sin string</i>, my capstone project for the minor in Applied Music Technology, is an electronic instrument driven by gestures. It uses two ultrasonic distance sensors and an Adafruit APDS9960 breakout board. The
+        breakout board is capable of tracking gestures, color, and distance. Currently, only the gesture tracking is in use, detecting left, right, up, and downward motions. When these are reported to the software, sound is triggered. The different
+        motions control the timbre of sound, changing the constants input to my syntehsizer. The ultrasonic distance sensors, positioned on opposite sides of the instrument, are used to measure how far away the performer's hand is. This distance is
+        then transformed into pitches. The program stores the most recent pitch, and outputs it through the desired synthesis when a gesture is detected.</p>
+      <img src="images/proj/ca1.JPG" class="leftimg" width="40%">
+      <p>One of the extended goals of this project is to implement multiple synthesizers and create an "all purpose string instrument." This would use different gestures to switch between bowed string synthesis and plucked string synthesis,
+        and potentially use the distance tracking capabilities of the APDS to trigger hammered string timbres.</p>
+      <img src="images/proj/ca3.JPG" class="rightimg" width="50%">
+      <p>To assemble the hardware, I learned how to solder and desolder. The ultrasonic sensors had to have the pins removed and swapped with new ones so they would point upward. I wired the components to a shield so the components can be
+        easily removed from the Arduino. In designing the casing, I considered multiple options, including making the entire thing out of wood. Aesthetically, I wanted the instrument to appear like a dulcimer, so I decided to make the casing out of
+        a decorative box. I printed my design so i could cut it cleanly, and I'm quite pleased with the result. It is supported with wooden blocks and pegs, two of which keep the electronics, which are attached to a sheet of craft board, in line
+        with the lid.</p>
+      <div style="max-width: 500px; margin:auto;">
         <video width="100%" height="100%" poster="images/proj/ca4.PNG" controls>
           <source src="images/music/capstone.mp4" type="video/mp4"></video>
-        <div class="capt">performance</div><br>
-      </div><br><br>
-      &emsp; To assemble the hardware, I learned how to solder and desolder. The ultrasonic sensors had to have the pins removed and swapped with new ones so they would point upward. I wired the components to a shield so the components can be
-      easily removed from the Arduino. In designing the casing, I considered multiple options, including making the entire thing out of wood. Aesthetically, I wanted the instrument to appear like a dulcimer, so I decided to make the casing out of
-      a decorative box. I printed my design so i could cut it cleanly, and I'm quite pleased with the result. It is supported with wooden blocks and pegs, two of which keep the electronics, which are attached to a sheet of craft board, in line
-      with the lid.<br><br>
-
+      </div>
 
     </div>
   </div>
@@ -568,7 +474,7 @@
       <span class="close">x</span>
       <p class="head">on settings</p>
       <div class="fluidMedia"><iframe width="100%" src="https://www.youtube.com/embed/YbMeZSbaemQ?modestbranding=1;rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
-      <p style="font-size:12px">This interactive installation uses motion tracking to manipulate videos. A generative system splices and organizes the clips, while the position of viewers changes the visual processing. Programmed in Max/MSP for
+      <p>This interactive installation uses motion tracking to manipulate videos. A generative system splices and organizes the clips, while the position of viewers changes the visual processing. Programmed in Max/MSP for
         Kinect using <a href="http://blogs.ubc.ca/taste/tag/kicass/">KiCASS</a>.</p>
     </div>
   </div>

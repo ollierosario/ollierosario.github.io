@@ -1,0 +1,95 @@
+/* basic styles */
+body {
+  line-height: 125%;
+  background: #ddf2e8 url("images/grid.jpg") 75% 0px/211px 375px repeat-y border-box fixed;
+  background: linear-gradient(to bottom, rgba(190, 208, 255, 0.8) 0%, rgba(25, 50, 50, 0.64) 100%),
+    url("images/grid.jpg") 75% 0px/211px 375px repeat-y border-box fixed;
+  background-attachment: fixed;
+  font-family: 'Montserrat',
+    sans-serif;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #557;
+  border-radius: 16px;
+}
+
+/* permalinks */
+#perma {
+  position: absolute;
+  right: -75px;
+  letter-spacing: .5px;
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:active {
+  color: #345a5e;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+a:hover {
+  color: #858585;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.head {
+  font-size: 26px;
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 10px;
+
+  color: {
+    color: Title
+  }
+
+  ;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style the header */
+
+.nav {
+  font-family: 'Montserrat', sans-serif;
+  float: left;
+  text-align: center;
+  padding-left: 15%;
+  padding-top: 12px;
+}
+
+.nav a {
+  padding-right: 15px;
+}
+
+
+#flipit {
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+}
+
+#bigcontainer {
+  background-color: rgba(190, 208, 255, 0.4);
+  width: 70%;
+  height: 85vh;
+  margin-left: 15%;
+  margin-top: 8vh;
+  position: fixed;
+  overflow-y: auto;
+  border: 2px dotted #bed0ff;
+  border-radius: 0px;
+}
