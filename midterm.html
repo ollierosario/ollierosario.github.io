@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    #circle {
+      height: 100vh;
+      width: 100vh;
+      margin-left: calc(50vw - 50vh);
+      position: relative;
+    }
+
+    body {
+      overflow: hide;
+    }
+
+    .audioplayer {
+      position: relative;
+      height: 120px;
+      line-height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      font-size: 20px;
+      border: none;
+      background-color: rgba(90, 58, 49, 0.1);
+    }
+
+    .audioplayer:hover {
+      cursor: pointer;
+    }
+
+    .playb {
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -15px 0 0 -10px;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-left: 30px solid #261C15;
+      display: block;
+    }
+
+    .pauseb {
+      width: 40px;
+      height: 30px;
+      border-style: double;
+      border-width: 0 0 0 20px;
+      border-color: #261C15;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -10px 0 0 -10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="circle">
+
+    <div class="audioplay" style="position:absolute; top:8%; left:42%">
+      <audio class="sounds" id="ocean" src="files/oceanography.mp3" type="audio/mpeg"></audio>
+      <button class="audioplayer" onclick="playpause('1', '1h')" type="button">
+        <div id="1h" class="playb"></div>
+      </button>
+    </div>
+
+    <div class="audioplay" style="position:absolute; top:11%; left:25%">
+      <audio class="sounds" id="2" src="files/TODO.mp3" type="audio/mpeg"></audio>
+      <button class="audioplayer" onclick="playpause('2', '2h')" type="button">
+        <div id="2h" class="playb"></div>
+      </button>
+    </div>
+
+    <div class="audioplay" style="position:absolute; top:23%; left: 12%">
+      <audio class="sounds" id="3" src="files/TODO.mp3" type="audio/mpeg"></audio>
+      <button class="audioplayer" onclick="playpause('3', '3h')" type="button">
+        <div id="3h" class="playb"></div>
+      </button>
+    </div>
+
+    <div class="audioplay" style="position:absolute; top:40%; left:8%">
+      <audio class="sounds" id="4" src="files/TODO.mp3" type="audio/mpeg"></audio>
+      <button class="audioplayer" onclick="playpause('4', '4h')" type="button">
+        <div id="4h" class="playb"></div>
+      </button>
+    </div>
+
+    <div class="audioplay" style="position:absolute; top:57%; left:12%">
+      <audio class="sounds" id="5" src="files/TODO.mp3" type="audio/mpeg"></audio>
+      <button class="audioplayer" onclick="playpause('5', '5h')" type="button">
+        <div id="5h" class="playb"></div>
+      </button>
+    </div>
+
+    <div class="audioplay" style="position:absolute; top:69%; left:25%">
+      <audio class="sounds" id="6" src="files/TODO.mp3" type="audio/mpeg"></audio>
+      <button class="audioplayer" onclick="playpause('6', '6h')" type="button">
+        <div id="6h" class="playb"></div>
+      </button>
+    </div>
+
+    <div class="audioplay" style="position:absolute; top:73%; left:42%">
+      <audio class="sounds" id="7" src="files/TODO.mp3" type="audio/mpeg"></audio>
+      <button class="audioplayer" onclick="playpause('7', '7h')" type="button">
+        <div id="7h" class="playb"></div>
+      </button>
+    </div>
+
+    <div class="audioplay" style="position:absolute; top:69%; left:59%">
+      <audio class="sounds" id="8" src="files/TODO.mp3" type="audio/mpeg"></audio>
+      <button class="audioplayer" onclick="playpause('8', '8h')" type="button">
+        <div id="8h" class="playb"></div>
+      </button>
+    </div>
+
+    <div class="audioplay" style="position:absolute; top:57%; left:72%">
+      <audio class="sounds" id="9" src="files/TODO.mp3" type="audio/mpeg"></audio>
+      <button class="audioplayer" onclick="playpause('9', '9h')" type="button">
+        <div id="9h" class="playb"></div>
+      </button>
+    </div>
+
+    <div class="audioplay" style="position:absolute; top:40%; left:76%">
+      <audio class="sounds" id="10" src="files/TODO.mp3" type="audio/mpeg"></audio>
+      <button class="audioplayer" onclick="playpause('10', '10h')" type="button">
+        <div id="10h" class="playb"></div>
+      </button>
+    </div>
+
+    <div class="audioplay" style="position:absolute; top:24%; left:71%">
+      <audio class="sounds" id="11" src="files/TODO.mp3" type="audio/mpeg"></audio>
+      <button class="audioplayer" onclick="playpause('11', '11h')" type="button">
+        <div id="11h" class="playb"></div>
+      </button>
+    </div>
+
+    <div class="audioplay" style="position:absolute; top:12%; left:59%">
+      <audio class="sounds" id="12" src="files/TODO.mp3" type="audio/mpeg"></audio>
+      <button class="audioplayer" onclick="playpause('12', '12h')" type="button">
+        <div id="12h" class="playb"></div>
+      </button>
+    </div>
+  </div>
+
+</body>
+
+<script>
+  function playpause(song, container) {
+    var so = document.getElementById(song);
+    var co = document.getElementById(container);
+    if (co.className == "playb") {
+      co.className = "pauseb";
+      so.play();
+    } else {
+      co.className = "playb";
+      so.pause();
+    }
+  }
+</script>
+
+</html>
