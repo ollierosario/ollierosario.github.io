@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<head>
+
+  <title>ollie rosario</title>
+  <link rel="shortcut icon" href="images/flor128.png" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <meta name="color:Background" content="#ddf2e8" />
+  <meta name="color:Text" content="#838282" />
+  <meta name="color:Link" content="#90a3ba" />
+  <meta name="color:LinkHover" content="#858585" <meta name="color:Scrollbar" content="#ffffff" />
+  <meta name="color:LightAccents" content="#b8b8b8" />
+
+  <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300i&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <style type="text/css">
+    body {
+      line-height: 150%;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    /* tabs styling */
+    #bigcontainer {
+      position: relative;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: rgba(0, 0, 0, 0);
+      border: 0px dotted #bed0ff;
+      border-radius: 20px;
+      opacity: 1;
+      overflow: hidden;
+    }
+
+    #bigcontainer img {
+      width: 100%;
+    }
+
+    #zither {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    #surroundingsound {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    #earthtouch {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    #arcticpoem {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .tabs {
+      display: inline-grid;
+      grid-template-columns: auto auto auto auto;
+      width: 100%;
+    }
+
+    .tablink {
+      background-color: rgba(0, 0, 0, 0.1);
+      height: 100%;
+      color: white;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      font-size: 17px;
+      width: 100%;
+    }
+
+    .tablink:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .tabcontent {
+      color: white;
+      display: none;
+      padding: 1px 20px;
+      height: 100%;
+      overflow-y: scroll;
+    }
+
+    /* media */
+
+    video {
+      position: relative;
+      max-width: 100%;
+      height: auto;
+    }
+
+    audio {
+      position: relative;
+      padding: 5px;
+      width: 100%;
+      height: auto;
+    }
+
+
+    /* iframe auto-resize */
+
+    .fluidMedia {
+      position: relative;
+      padding-bottom: 56.25%;
+      /* proportion value to aspect ratio 16:9 */
+      padding-top: 30px;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .fluidMedia iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+
+    /* two column */
+    .twocolumn {
+      display: inline-grid;
+      grid-template-columns: auto auto;
+      grid-column-gap: 20px;
+      width: 100%;
+    }
+
+    /* surrounding sound image grid */
+    .item1 {
+      grid-area: main;
+    }
+
+    .item2 {
+      display: grid;
+      flex-direction: column;
+      grid-area: right;
+      grid-row-gap: 3px;
+    }
+
+    .navimgs img {
+      cursor: pointer;
+      filter: grayscale(90%);
+      transition: all 1s;
+    }
+
+    .navimgs img:hover {
+      cursor: pointer;
+      filter: grayscale(0%);
+      transition: all 1s;
+    }
+
+    .simg-grid-container {
+      display: grid;
+      grid-template-areas:
+        'main main main main right'
+        'main main main main right'
+        'main main main main right'
+        'main main main main right';
+      grid-column-gap: 11px;
+    }
+
+    .et-grid-container {
+      display: grid;
+      grid-template-areas:
+        'main main main right'
+        'main main main right'
+        'main main main right';
+      grid-column-gap: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="bigcontainer">
+    <div class="tabs">
+      <button class="tablink" onclick="openPage('zither', this, 'rgba(0,0,0,0.4)')">zither sin string</button>
+      <button class="tablink" onclick="openPage('surroundingsound', this, 'rgba(0,0,0,0.5)')">surrounding sound</button>
+      <button class="tablink" onclick="openPage('earthtouch', this, 'rgba(0,0,0,0.6)')">earth and touch</button>
+      <button class="tablink" onclick="openPage('arcticpoem', this, 'rgba(0,0,0,0.7)')" id="defaultOpen">untitled arctic poem</button>
+    </div>
+
+    <div id="zither" class="tabcontent">
+      <h3>zither sin string</h3>
+      <img src="images/proj/ca.jpg" style="max-width:600px" class="center">
+      <p><i>zither sin string</i> is an electronic instrument driven by gestures. It uses two ultrasonic distance sensors and an Adafruit APDS9960 breakout board, used for gesture tracking. The gestures left, right, up, and down are used to control
+        the output of single notes or chords, while the distances between the performer's hands and the instrument control pitch. I designed a Karplus Strong-based synthesis engine in Max to play notes, but the instrument can also be used as a MIDI
+        controller.</p>
+      <img src="images/proj/ca4.jpg" class="center">
+      <p> The following videos document two different performances with <i>zither sin string</i>. <i>untitled</i> showcases the instruments ability to create complex timbres, while <i>Emerald</i> presents it in a collaborative context. <i>Emerald</i>
+        was composed collaboratively by myself and three others in response to a task to create a cohesive piece by programming novel controllers. This is a rehearsal video of the outcome of the exercise.</p>
+      <p>Key times in the videos: <br> <i>untitled</i> for <i>zither sin string:</i> ?:??-?:??<br> <i>Emerald:</i> ?:??-?:??
+        <div class="twocolumn">
+          <div style="max-width: 500px; margin:auto;">
+            <video width="100%" height="100%" poster="images/proj/ca4.PNG" controls>
+              <source src="images/music/capstone.mp4" type="video/mp4"></video>
+          </div>
+          <div style="max-width: 500px; margin:auto;">
+            <video width="100%" height="100%" poster="images/music/emerald.jpg" controls>
+              <source src="images/music/emerald.mp4" type="video/mp4"></video>
+          </div>
+        </div>
+        <p style="padding-bottom: calc(7vh + 50px);"> This instrument was the origin point in my interest in using digital instruments as tools of communication. The act of turning beams of infrared light and ultrasonic soundwaves into sound creates
+          a visual of
+          playing the air. The explorations that followed this, beginning with <i>surrounding sound</i> began from the questions "what is the sound of air?" and "how can you play the air?"</p>
+    </div>
+
+    <div id="surroundingsound" class="tabcontent">
+      <h3>surrounding sound</h3>
+      <p>When I started creating <i>surrounding sound</i>, I hoped that it would allow me to understand how different parameters, like humidity and barometric pressure, influence weather. I quickly realized that I wouldn't be able to match the sounds
+        to the weather and maintain the natural interactions between forces. I could learn to recognize any one component in isolation, but together I could not. This turned out to be a success of the project. I realized I needed to move away from
+        data sonification, and towards creating interactions with the natural features that I want to understand.</p>
+      <div class="simg-grid-container">
+        <div class="item1"> <img id="expandedImg" src="images/proj/surround1.JPG" style="width:100%"></div>
+        <div class="item2 navimgs">
+          <img src="images/proj/surround1.JPG" style="width:100%" onclick="selectImage(this);"><img src="images/proj/surround2.png" style="width:100%" onclick="selectImage(this);"><img src="images/proj/surround3.JPG" style="width:100%"
+            onclick="selectImage(this);"><img src="images/proj/surround4.JPG" style="width:100%" onclick="selectImage(this);">
+        </div>
+      </div>
+      <p><i>surrounding sound</i> is programmed in Supercollider and Arduino using two microcontrollers. It does not need to be connected to a computer to be used, as it is meant to be taken outdoors to listen to environments. It has been shown in
+        both performance and installation, paired with generative audiovisual projections that present the locations it recorded. The performance visual, an excerpt of which is on the right, distorts images and videos of these locations according to
+        the volume of sound from the performer, the instrument, and a field recording of the ambient noise from one site. The installation visual uses a 3-dimensional space to take viewers to the different sites and their sounds. The sound of any
+        particular site is loudest at the center of its image cube, and silent once the camera is too far from it.</p>
+      <div class="twocolumn">
+        <div style="margin:auto;">
+          <video width="100%" height="100%" poster="images/proj/surround5.jpg" controls>
+            <source src="images/proj/surround5.mp4" type="video/mp4"></video>
+        </div>
+        <div style="margin:auto;">
+          <video width="100%" height="100%" poster="images/proj/surround6.jpg" controls>
+            <source src="images/proj/surround6.mp4" type="video/mp4"></video>
+        </div>
+      </div>
+      <p style="padding-bottom: calc(7vh + 50px);">Creating mutual understanding begins with communication. <i>surrounding sound</i> seeks to facilitate a conversation with the weather. In the
+        next few months, it will be succeeded by its younger sibling, <i>pocket sound</i>, an instrument that carries the same conversation using acoustic sound rather than electronic sound.</p>
+    </div>
+
+    <div id="earthtouch" class="tabcontent">
+      <h3>earth and touch</h3>
+      <p>After making <i>surrounding sound</i>, I wanted to find a way to communicate with more of these parts of landscapes that do not make sound. Rather than separate ourselves from plants, I sought common ground. Both human hands and plant soil
+        can be interpreted using capacative touch sensing. Electricity is conducted by both us and plants. <i>earth and touch</i> starts a conversation between humans and plants from the shared conductivity. The conversation is not in human language
+        or plant language. Instead, it is mediated by the machine, in an unfamiliar language to both of us. This creates a level playing field to begin to communicate together.</p>
+      <div class="et-grid-container">
+        <div class="item1"> <img id="expandedImg2" src="images/proj/et1.JPG" style="width:100%"></div>
+        <div class="item2 navimgs">
+          <img src="images/proj/et1.JPG" style="width:100%" onclick="selectImage2(this);"><img src="images/proj/et2.JPG" style="width:100%" onclick="selectImage2(this);"><img src="images/proj/et3.JPG" style="width:100%" onclick="selectImage2(this);">
+        </div>
+      </div>
+      <audio controls style="height: 40px;">
+        <source src="images/music/earthtouch.mp3" type="audio/mpeg"></audio>
+      <p style="padding-bottom: calc(7vh + 50px);">To create the instrument, I connected several analog inputs to a Teensy microcontroller. The Teensy is attached to the Teensy Audio Shield, a lovely board that allows it to make music. The company
+        that makes
+        these also has a library for creating audio synthesis systems in Arduino that works with an online interface, the PJRC Audio System Design Tool. Using these, I was able to create a complex network of sound creation. All inputs for human touch
+        and plant soil interact with one another. When one wire is touched, it changes multiple parts of the system rather than just one. The result is a device where plants and I can talk to one another, and plants can talk to each other as well.
+      </p>
+    </div>
+
+    <div id="arcticpoem" class="tabcontent">
+      <h3>untitled arctic poem</h3>
+      <img style="width:100%;" src="images/proj/ap.jpg">
+      <p><i>untitled arctic poem</i> is the culmination of a semester of learning how to convey pressing issues in ecological sciences to the general public. After spending much of the semester learning in the context of illustration, I decided to
+        turn to audiovisual narrative to discuss the future of Arctic herbivores. In researching this topic, I arrived at a literature review that identified trends in herbivory driven by warming seasons, migration of plant life northward, and
+        increasing incidence of trophic mismatch -- a phenomenon that occurs when species whose seasonal phases are interconnected change the timing of their behaviors and become out of sync. I now knew that herbivores in the Arctic were
+        intrinsically connected to climate change, but with so many interactions present in Arctic biome, the task to communicate them was daunting. To address Arctic herbivory, I accepted the complexity of the issue, and began a poetic exploration.
+      </p>
+      <p>The inital Western expeditions in the Arctic were often violent and disturbing, and are emblematic of a colonial ideology of manifest destiny. Continued oil drilling in the region is a factor in both global temperature increase and habitat
+        loss. I presented public domain footage from early expeditions, showing the pollution already beginning in the form of ships, alongside ice melt data visualizations and key herbivore species. The audio in the piece combined haunting sounds of
+        sea ice melt with boreal forest noise and animal calls, randomly changing the levels of each sound source gradually in the installation. It was played through a ceiling-mounted dome speaker, so that visitors could only hear the content when
+        standing in below it, taking in the poem. The piece was installed at Boston Cyberarts in January 2020. The following is a short recording of the program that generated the audiovisual langscape.
+        <div style="margin:auto; padding-bottom:calc(7vh + 50px);">
+          <video width="100%" height="100%" poster="images/proj/uap.jpg" controls>
+            <source src="images/proj/uap.mp4" type="video/mp4"></video>
+        </div>
+    </div>
+  </div>
+</body>
+
+<script>
+  function openPage(pageName, elmnt, color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+
+  function selectImage(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    expandImg.src = imgs.src;
+    expandImg.parentElement.style.display = "block";
+  }
+
+  function selectImage2(imgs) {
+    var expandImg = document.getElementById("expandedImg2");
+    expandImg.src = imgs.src;
+    expandImg.parentElement.style.display = "block";
+  }
+</script>
+
+</html>
