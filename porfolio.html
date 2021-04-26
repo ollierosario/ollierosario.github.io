@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+<head>
+
+  <title>ollie rosario</title>
+  <link rel="shortcut icon" href="images/flor128.png" />
+  <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+
+<body></body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<meta name="color:Background" content="#ddf2e8" />
+<meta name="color:Text" content="#838282" />
+<meta name="color:Link" content="#90a3ba" />
+<meta name="color:LinkHover" content="#858585" <meta name="color:Scrollbar" content="#ffffff" />
+<meta name="color:LightAccents" content="#b8b8b8" />
+
+<link href="https://fonts.googleapis.com/css?family=Reenie+Beanie" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato:300i&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+<style type="text/css">
+  #bigcontainer {
+    overflow-y: hidden;
+    margin-top: 11vh;
+    width: 85%;
+    height: 85vh;
+    margin-left: 7.5%;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px dotted #bed0ff;
+    border-radius: 0px;
+    opacity: 1;
+  }
+
+  .gridcontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    grid-template-rows: 50% 50%;
+    grid-gap: 2vh;
+  }
+
+
+  .gridcontainer>div {
+    background-color: rgba(190, 208, 255, 0.8);
+    text-align: center;
+    font-size: 30px;
+  }
+
+  /* project tiles */
+  .gridcontainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: luminosity;
+  }
+
+  .gridnav {
+    position: relative;
+  }
+
+  .gridnav:hover .holdtext {
+    opacity: .8;
+  }
+
+  .holdtext {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    -moz-transition: all 1 ease-in;
+    -o-transition: all 1s ease-in;
+    -webkit-transition: all 1s ease-in;
+    transition: all 1s ease-in;
+    opacity: 0;
+    pointer-events: none;
+    display: grid;
+  }
+
+  h1 {
+    color: #FFFFFF;
+    font-family: 'Lato', sans-serif;
+    font-size: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2;
+  }
+
+  h2 {
+    color: #000;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+  }
+
+  p {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /*modal pages*/
+  #pr1 {
+    display: none;
+  }
+
+  #pr2 {
+    display: none;
+  }
+
+  #pr3 {
+    display: none;
+  }
+
+  #pr4 {
+    display: none;
+  }
+
+  .modal {
+    position: absolute;
+    padding-top: 2vh;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    right: 0px;
+    overflow: hidden;
+    background-color: rgb(190, 208, 255);
+    background-color: rgba(190, 208, 255, 0.8);
+    z-index: 3;
+  }
+
+  .modal-content {
+    max-width: 85%;
+    max-height: 96%;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    border-radius: 15px;
+    margin-top: 2vh;
+    margin-left: 7.5vw;
+    display: block;
+    box-shadow: 0 0 0 999px rgba(0, 0, 0, .5);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .modal-content img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .close {
+    position: sticky;
+    position: -webkit- sticky;
+    top: 15px;
+    left: 100%;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* tab navigation */
+  .tabs {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    width: 100%;
+  }
+
+  .tablink {
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 100%;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 100%;
+  }
+
+  .tablink2 {
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 100%;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 100%;
+  }
+
+  .tablink:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .tabcontent {
+    color: white;
+    display: none;
+    padding: 1px 20px;
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+
+  /* two column */
+  .twocolumn {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 20px;
+    width: 100%;
+  }
+
+  /* surrounding sound image grid */
+  .item1 {
+    grid-area: main;
+  }
+
+  .item2 {
+    display: grid;
+    flex-direction: column;
+    grid-area: right;
+    grid-row-gap: 3px;
+  }
+
+  .navimgs img {
+    cursor: pointer;
+    filter: grayscale(90%);
+    transition: all 1s;
+  }
+
+  .navimgs img:hover {
+    cursor: pointer;
+    filter: grayscale(0%);
+    transition: all 1s;
+  }
+
+  .simg-grid-container {
+    display: grid;
+    grid-template-areas:
+      'main main main main right'
+      'main main main main right'
+      'main main main main right'
+      'main main main main right';
+    grid-column-gap: 11px;
+  }
+
+  .et-grid-container {
+    display: grid;
+    grid-template-areas:
+      'main main main right'
+      'main main main right'
+      'main main main right';
+    grid-column-gap: 10px;
+  }
+
+  /* media */
+  video {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+  }
+
+  audio {
+    position: relative;
+    padding: 5px;
+    width: 100%;
+    height: auto;
+  }
+
+  .fluidMedia {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* proportion value to aspect ratio 16:9 */
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .fluidMedia iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+</head>
+
+<body>
+
+  <!--  navigation -->
+  <div class="nav">
+    <img src="images/flor16.png"> <a href="/">home</a> <a href="/bio">bio</a> <a href="/resume">resume</a> <a href="/portfolio">portfolio</a> <a href="/contact" style="padding-right:5px;">contact</a><img src="images/flor16.png" id="flipit">
+  </div>
+
+  <!-- grid -->
+  <div id="bigcontainer">
+    <div class="gridcontainer">
+
+      <div id="p1" class="gridnav">
+        <img src="images/proj/et3.jpg" onclick="openproj('pr1')">
+        <div class="holdtext">
+          <h1>instruments</h1>
+        </div>
+      </div>
+
+      <div id="p2" class="gridnav">
+        <img src="images/art/settings.jpg" onclick="openproj('pr2')">
+        <div class="holdtext">
+          <h1>installations</h1>
+        </div>
+      </div>
+
+      <div id="p3" class="gridnav">
+        <img src="images/music/fire.jpg" onclick="openproj('pr3')">
+        <div class="holdtext">
+          <h1>performances</h1>
+        </div>
+      </div>
+
+      <div id="p4" class="gridnav">
+        <a href=""><img src="images/music/boat.jpg">
+          <div class="holdtext">
+            <h1>bandcamp (coming soon)</h1>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!--modal pages -->
+  <div id="pr1" class="modal">
+    <div class="modal-content" style="padding:0px;">
+      <div class="tabs">
+        <button class="tablink" onclick="openPage('zither', this, 'rgba(0,0,0,0.5)')" id="defaultOpen">zither sin string</button>
+        <button class="tablink" onclick="openPage('surroundingsound', this, 'rgba(0,0,0,0.6)')">surrounding sound</button>
+        <button class="tablink" onclick="openPage('earthtouch', this, 'rgba(0,0,0,0.7)')">earth and touch</button>
+        <button class="tablink2"><span class="close" style="margin-right:20px">x</span></button>
+      </div>
+
+      <div id="zither" class="tabcontent" style="background-color: rgba(0, 0, 0, 0.5)">
+        <img src="images/proj/ca.JPG" style="max-width:600px" class="center">
+        <p><i>zither sin string</i> is an electronic instrument driven by gestures. It uses two ultrasonic distance sensors and an Adafruit APDS9960 breakout board, used for gesture tracking. The gestures left, right, up, and down are used to control
+          the output of single notes or chords, while the distances between the performer's hands and the instrument control pitch. I designed a Karplus Strong-based synthesis engine in Max to play notes, but the instrument can also be used as a MIDI
+          controller.</p>
+        <img src="images/proj/ca4.JPG" class="center">
+        <p> The following video documents a performance with <i>zither sin string</i>.
+          <div style="max-width: 500px; margin:auto;">
+            <video width="100%" height="100%" poster="images/proj/ca4.PNG" controls>
+              <source src="images/music/capstone.mp4" type="video/mp4"></video>
+          </div>
+          <p style="padding-bottom: calc(7vh + 50px);"> This instrument was the origin point in my interest in using digital instruments as tools of communication. The act of turning beams of infrared light and ultrasonic soundwaves into sound
+            creates a visual of playing the air. The explorations that followed this, beginning with <i>surrounding sound</i> began from the questions "what is the sound of air?" and "how can you play the air?"</p>
+      </div>
+
+      <div id="surroundingsound" class="tabcontent" style="background-color: rgba(0, 0, 0, 0.6)">
+        <p>When I started creating <i>surrounding sound</i>, I hoped that it would allow me to understand how different parameters, like humidity and barometric pressure, influence weather. I quickly realized that I wouldn't be able to match the
+          sounds to the weather and maintain the natural interactions between forces. I could learn to recognize any one component in isolation, but together I could not. This turned out to be a success of the project. I realized I needed to move
+          away from data sonification, and towards creating interactions with the natural features that I want to understand.</p>
+        <div class="simg-grid-container">
+          <div class="item1"> <img id="expandedImg" src="images/proj/surround1.JPG" style="width:100%"></div>
+          <div class="item2 navimgs">
+            <img src="images/proj/surround1.JPG" style="width:100%" onclick="selectImage(this);"><img src="images/proj/surround2.png" style="width:100%" onclick="selectImage(this);"><img src="images/proj/surround3.JPG" style="width:100%"
+              onclick="selectImage(this);"><img src="images/proj/surround4.JPG" style="width:100%" onclick="selectImage(this);">
+          </div>
+        </div>
+        <p><i>surrounding sound</i> is programmed in Supercollider and Arduino using two microcontrollers. It does not need to be connected to a computer to be used, as it is meant to be taken outdoors to listen to environments. It has been shown in
+          both performance and installation, paired with generative audiovisual projections that present the locations it recorded. The performance visual, an excerpt of which is on the right, distorts images and videos of these locations according
+          to the volume of sound from the performer, the instrument, and a field recording of the ambient noise from one site. The installation visual uses a 3-dimensional space to take viewers to the different sites and their sounds. The sound of
+          any particular site is loudest at the center of its image cube, and silent once the camera is too far from it.</p>
+        <div class="twocolumn">
+          <div style="margin:auto;">
+            <video width="100%" height="100%" poster="images/proj/surround5.jpg" controls>
+              <source src="images/proj/surround5.mp4" type="video/mp4"></video>
+          </div>
+          <div style="margin:auto;">
+            <video width="100%" height="100%" poster="images/proj/surround6.jpg" controls>
+              <source src="images/proj/surround6.mp4" type="video/mp4"></video>
+          </div>
+        </div>
+        <p style="padding-bottom: calc(7vh + 50px);">Creating mutual understanding begins with communication. <i>surrounding sound</i> seeks to facilitate a conversation with the weather. Its younger sibling, <i>weather events</i>, carries this
+          conversation using a chaotic system to synthesize audio alongside acoustic sound.</p>
+      </div>
+
+      <div id="earthtouch" class="tabcontent" style="background-color: rgba(0, 0, 0, 0.7)">
+        <p>After making <i>surrounding sound</i>, I wanted to find a way to communicate with more of these parts of landscapes that do not make sound. Rather than separate ourselves from plants, I sought common ground. Both human hands and plant soil
+          can be interpreted using capacative touch sensing. Electricity is conducted by both us and plants. <i>earth and touch</i> starts a conversation between humans and plants from the shared conductivity. The conversation is not in human
+          language or plant language. Instead, it is mediated by the machine, in an unfamiliar language to both of us. This creates a level playing field to begin to communicate together.</p>
+        <div class="et-grid-container">
+          <div class="item1"> <img id="expandedImg2" src="images/proj/et1.jpg" style="width:100%"></div>
+          <div class="item2 navimgs">
+            <img src="images/proj/et1.jpg" style="width:100%" onclick="selectImage2(this);"><img src="images/proj/et2.jpg" style="width:100%" onclick="selectImage2(this);"><img src="images/proj/et3.jpg" style="width:100%"
+              onclick="selectImage2(this);">
+          </div>
+        </div>
+        <audio controls style="height: 40px;">
+          <source src="images/music/earthtouch.mp3" type="audio/mpeg"></audio>
+        <p style="padding-bottom: calc(7vh + 50px);">To create the instrument, I connected several analog inputs to a Teensy microcontroller. The Teensy is attached to the Teensy Audio Shield, a lovely board that allows it to make music. The company
+          that makes these also has a library for creating audio synthesis systems in Arduino that works with an online interface, the PJRC Audio System Design Tool. Using these, I was able to create a complex network of sound creation. All inputs
+          for human touch and plant soil interact with one another. When one wire is touched, it changes multiple parts of the system rather than just one. The result is a device where plants and I can talk to one another, and plants can talk to each
+          other as well.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="pr2" class="modal">
+    <div class="modal-content">
+      <span class="close">x</span>
+      <div class="head">installations</div>
+      <br>
+      <h2>on settings</h2>
+      <div class="fluidMedia"><iframe width="100%" src="https://www.youtube.com/embed/YbMeZSbaemQ?modestbranding=1;rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+      <p>This interactive installation uses motion tracking to manipulate videos. A generative system splices and organizes the clips, while the position of viewers changes the visual processing. Programmed in Max/MSP for Kinect using <a
+          href="http://blogs.ubc.ca/taste/tag/kicass/">KiCASS</a>.</p>
+    </div>
+  </div>
+
+  <div id="pr3" class="modal">
+    <div class="modal-content">
+      <span class="close">x</span>
+      <div class="head">performances</div>
+      <br>
+      <h2>Emerald, 2019</h2>
+      <video width="100%" height="100%" poster="images/music/emerald.jpg" controls>
+        <source src="images/music/emerald.mp4" type="video/mp4"></video>
+      <p>Programmers: Ollie Rosario, Katie Lee, Cindy Chow, Ramsey Sadaka</p>
+      <p><i>Emerald</i> was composed collaboratively in response to a task to create a cohesive piece by programming novel controllers. This is a rehearsal video of the outcome of the exercise. I played an instrument I built, <i>zither sin string</i>
+      </p>
+      <br>
+      <h2>At the edge of the water..., 2018</h2>
+      <video width="100%" height="100%" poster="images/music/water.PNG" controls>
+        <source src="images/music/water2.mp4" type="video/mp4"></video>
+      <p>Programmers: Ollie Rosario, Ramsey Sakada<br> Choreographer, Dancer: Gemma Tomasky </p>
+      <p>This piece, for dancer and virtual cellist, explores the interaction between the natural and the electronic. The GameTrak controls used by the dancer and the cellist control the output of sound. At their most extreme, they also distort the
+        organic sounds and alter the cello's timbre.</p>
+      <br>
+      <h2>Fire and Ice, 2018</h2>
+      <div class="fluidMedia"><iframe width="100%" src="https://www.youtube.com/embed/-hutGz2QRWI?modestbranding=1;rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+      <p>Programmers: Ollie Rosario, Chantelle Ko, Elizabeth Feng<br> Violin: Chantelle Ko </p>
+      <p><i>Fire and Ice</i> discusses the relationships between extremes. The two contrasting elements are explored through a range of their manifestations: volcanic eruptions, ice floes shifting, houses burning, and more all can be heard in the
+        piece. We progress through their various similar and dissimilar sounds and forces, keeping their potential for destruction in mind.</p>
+      <br>
+      <h2>The Bells..., 2017</h2>
+      <div class="fluidMedia"><iframe width="100%" src="https://www.youtube.com/embed/IQI38cqshgU?modestbranding=1;rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+      <p>Programmers: Ollie Rosario, Micki Lee-Smith<br> Choreographer, Dancer: Gemma Tomasky </p>
+      <p><i>The Bells</i> is a piece inspired by Edgar Allan Poe's poem of the same name. Our interpretation of the change in tone through the poem gave our piece a narrative of instability. The character moves through zones that are increasingly
+        chaotic and dangerous, becoming more scared and confused, before finally being caught in the center. The sound samples used in each zone are meant to reflect this, and the themes of loss and madness. </p <br>
+    </div>
+  </div>
+
+  <script>
+    /*
+    // display modals
+*/
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close");
+    var hide = document.getElementById("bigcontainer");
+
+
+    function openproj(pNum) {
+      var project = document.getElementById(pNum);
+      project.style.display = "block";
+      hide.style.opacity = "0";
+      for (var i = 0; i < span.length; i++) {
+        span[i].onclick = function() {
+          project.style.display = "none";
+          hide.style.opacity = "1";
+        }
+      }
+      window.onclick = function(event) {
+        if (event.target == project) {
+          project.style.display = "none";
+          hide.style.opacity = "1";
+        }
+      }
+    }
+
+    function openPage(pageName, elmnt, color) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(pageName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+
+    function selectImage(imgs) {
+      var expandImg = document.getElementById("expandedImg");
+      expandImg.src = imgs.src;
+      expandImg.parentElement.style.display = "block";
+    }
+
+    function selectImage2(imgs) {
+      var expandImg = document.getElementById("expandedImg2");
+      expandImg.src = imgs.src;
+      expandImg.parentElement.style.display = "block";
+    }
+  </script>
+</body>
